@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>vedaweb</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+      </publicationStmt>
+      <sourceDesc>
+        <p/>
+      </sourceDesc>
+    </fileDesc>
+
+  </teiHeader>
+  <text>
+
+    <body>
+
+
+      <div>
+        <head>TEI Specifications</head>
+        <schemaSpec ident="vedaweb" xml:lang="en" prefix="vedaweb_" targetLang="en" docLang="en">
+          <moduleRef key="analysis" include="w"/>
+          <moduleRef key="linking" include="linkGrp"/>
+          <moduleRef key="iso-fs" include="fs f symbol string vAlt"/>
+          <moduleRef key="core" include="p list item head author title l lg"/>
+          <moduleRef key="tei"/>
+          <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc"/>
+          <moduleRef key="textstructure" include="TEI text body div front back"/>
+          <specGrpRef target="#classmods"/>
+          <specGrpRef target="#bodyfixes"/>
+          <specGrpRef target="#hdrfixes"/>
+          <classSpec ident="att.canonical" type="atts" mode="delete"/>
+          <classSpec ident="att.sortable" type="atts" mode="delete"/>
+          <!-- Global attribute specifications -->
+          <classSpec ident="att.global" module="tei" mode="change" type="atts">
+            <attList>
+              <attDef ident="xml:lang" mode="change">
+                <desc>VedaWeb: The attribute <att>xml:lang</att> is used to report in detail the
+                  language and/or the transliteration system used in the source.</desc>
+                <valList type="closed" mode="replace">
+                  <valItem ident="san-Latn-x-ISO-15919">
+                    <desc>Sanskrit, ISO-15919</desc>
+                  </valItem>
+                  <valItem ident="sa-Deva">
+                    <desc>Sanskrit, Devanagari</desc>
+                  </valItem>
+                  <valItem ident="de">
+                    <desc>German</desc>
+                  </valItem>
+                  <valItem ident="en">
+                    <desc>English</desc>
+                  </valItem>
+                  <valItem ident="fr">
+                    <desc>French</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </classSpec>
+          <!-- Element specifications -->
+          <!-- textstructure -->
+          <elementSpec ident="div" module="textstructure" mode="change">
+            <attList>
+              <attDef ident="type" mode="change">
+                <desc>VedaWeb: The attribute <att>type</att> is used to label the different levels
+                  of the text structure employed for the Rigveda.</desc>
+                <valList type="closed" mode="replace">
+                  <valItem ident="dedication"/>
+                  <valItem ident="addressee"/>
+                  <valItem ident="group"/>
+                  <valItem ident="book"/>
+                  <valItem ident="hymn"/>
+                  <valItem ident="stanza"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          <!-- core -->
+          <elementSpec ident="lg" module="core" mode="change">
+            <attList>
+              <attDef ident="source" mode="change">
+                <desc>VedaWeb: The attribute <att>source</att> is used to label the different
+                  sources of the Rigveda employed in this project.</desc>
+                <valList type="closed" mode="replace">
+                  <valItem ident="zurich">
+                    <desc>A version of the Rigveda text based on Lubotsky's concordance, used as the
+                      reference text for the annotations added at the University of Zurich</desc>
+                  </valItem>
+                  <valItem ident="vnh">
+                    <desc>Nooten, Barend A. van &amp;Gary Holland (eds.). 1994. Rig Veda: a
+                      metrically restored text with an introduction and notes. Cambridge, Mass.
+                      [u.a.]: Harvard University Press.</desc>
+                  </valItem>
+                  <valItem ident="aufrecht">
+                    <desc>Aufrecht, Theodor. 1955. Die Hymnen des Rigveda. Erster Teil. Mandala
+                      I-VI. Darmstadt: Wissenschaftliche Buchgesellschaft. UND Aufrecht, Theodor.
+                      1955. Die Hymnen des Rigveda. Zweiter Teil. Mandala VII-X. Darmstadt:
+                      Wissenschaftliche Buchgesellschaft.</desc>
+                  </valItem>
+                  <valItem ident="padapatha">
+                    <desc>TODO</desc>
+                  </valItem>
+                  <valItem ident="detlef">
+                    <desc>Devanagari version based on the Samhita-text by Aufrecht and Van Nooten
+                      &amp; Holland, provided by Detlef Eichler </desc>
+                  </valItem>
+                  <valItem ident="geldner">
+                    <desc>Geldner, Karl Friedrich. 1951. Der Rig-Veda (aus d. Sanskrit ins Dt.
+                      übers. u. mit e. laufenden Kommentar versehen). Cambridge, Mass.: Harvard
+                      University Press.</desc>
+                  </valItem>
+                  <valItem ident="grassmann">
+                    <desc>TODO</desc>
+                  </valItem>
+                  <valItem ident="griffith">
+                    <desc>Griffith, Ralph Thomas Hotchkin. 1890. The Hymns of the Rigveda. E.J.
+                      Lazarus.</desc>
+                  </valItem>
+                  <valItem ident="macdonell">
+                    <desc>MacDonell, Arthur A. 1922. Hymns from the Rigveda. Selected and Metrically
+                      Translated. London: Oxford University Press.</desc>
+                  </valItem>
+                  <valItem ident="otto">
+                    <desc>Otto, Rudolf. 1948. Varuna-Hymnen des Rig-Veda. Bonn: Ludwig Röhrscheid
+                      Verlag.</desc>
+                  </valItem>
+                  <valItem ident="renou">
+                    <desc>Otto, Rudolf. 1948. Varuna-Hymnen des Rig-Veda. Bonn: Ludwig Röhrscheid
+                      Verlag.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="l" module="core" mode="change">
+            <attList>
+              <attDef ident="source" mode="change">
+                <valList>
+                  <valItem ident="gunkel_ryan">
+                    <desc>Riigveda version provided by D. Gunkel and K. Ryan</desc>
+                  </valItem>
+                  <valItem ident="lubotsky">
+                    <desc>Lubotsky, Alexander. 1997. A Rgvedic word concordance. (2 Vols.) New
+                      Haven, Conn.: American Oriental Society.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+
+          <!-- iso-fs -->
+
+          <elementSpec ident="f" module="iso-fs" mode="change">
+            <attList>
+              <attDef ident="name" mode="change">
+                <desc>VedaWeb: The attribute <att>name</att> is employed to label the different
+                  morphosyntactic annotation levels </desc>
+                <valList type="closed" mode="replace">
+                  <valItem ident="surface">
+                    <desc>Token to be described</desc>
+                  </valItem>
+                  <valItem ident="gra_lemma">
+                    <desc>The content of this element should be an entry from Grassmann's
+                      dictionary. Most of the time it is not the same notation employed by
+                      Grassmann. This information has been provided by Zürich and is left here as it
+                      is.</desc>
+                  </valItem>
+                  <valItem ident="gra_gramm">
+                    <desc>Interpretation by Zurich of the grammatical information related to this
+                      word in Grassmann. Three categories are employed: 'nominal stem', 'root' and
+                      'invariable'. See modifications to <tag>symbol</tag>
+                    </desc>
+                  </valItem>
+                  <valItem ident="morphosyntax">
+                    <desc>Container for the morpho-syntactic annotations developed by Zurich.</desc>
+                  </valItem>
+
+                  <!-- leipzig glossing rules, morphosyntactic categories -->
+                  <valItem ident="person"> </valItem>
+                  <valItem ident="case"> </valItem>
+                  <valItem ident="voice"> </valItem>
+                  <valItem ident="tense"> </valItem>
+                  <valItem ident="number"> </valItem>
+                  <valItem ident="gender"> </valItem>
+                  <valItem ident="mood"> </valItem>
+                  <valItem ident="non-finite"> </valItem>
+                  <!-- gunkel_ryan-->
+                  <valItem ident="label"> </valItem>
+                  <valItem ident="strata"> </valItem>
+
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+
+
+          <elementSpec ident="symbol" module="iso-fs" mode="change">
+            <attList>
+              <attDef ident="value" mode="change">
+                <desc>VedaWeb: The attribute <att>value</att> is employed to assign a Leipzig
+                  Glossing Rule or other gram. information from Grassmann's dictonary, as
+                  interpreted by Zurich.</desc>
+                <valList type="closed" mode="replace">
+                  <!-- Grassmann Zurich -->
+                  <valItem ident="nominal stem"> </valItem>
+                  <valItem ident="pronoun"> </valItem>
+                  <valItem ident="root"> </valItem>
+                  <valItem ident="invariable"> </valItem>
+
+                  <!-- Leipzig Glossing Rules -->
+                  <valItem ident="1">
+                    <desc>first person</desc>
+                  </valItem>
+                  <valItem ident="2">
+                    <desc>second person</desc>
+                  </valItem>
+                  <valItem ident="3">
+                    <desc>third person</desc>
+                  </valItem>
+                  <valItem ident="ABL">
+                    <desc>ablative</desc>
+                  </valItem>
+                  <valItem ident="ACC">
+                    <desc>accusative</desc>
+                  </valItem>
+                  <valItem ident="ACT">
+                    <desc>actor</desc>
+                  </valItem>
+                  <valItem ident="AOR">
+                    <desc>aorist</desc>
+                  </valItem>
+                  <valItem ident="COND">
+                    <desc>conditional</desc>
+                  </valItem>
+                  <valItem ident="DAT">
+                    <desc>dative</desc>
+                  </valItem>
+                  <valItem ident="DU">
+                    <desc>dual</desc>
+                  </valItem>
+                  <valItem ident="F">
+                    <desc>feminine</desc>
+                  </valItem>
+                  <valItem ident="FUT">
+                    <desc>future</desc>
+                  </valItem>
+                  <valItem ident="GEN">
+                    <desc>genitive</desc>
+                  </valItem>
+                  <valItem ident="IMP">
+                    <desc>imperative</desc>
+                  </valItem>
+                  <valItem ident="IND">
+                    <desc>indicative</desc>
+                  </valItem>
+                  <valItem ident="INS">
+                    <desc>instrumental</desc>
+                  </valItem>
+                  <valItem ident="IPRF">
+                    <desc>imperfect</desc>
+                  </valItem>
+                  <valItem ident="LOC">
+                    <desc>locative</desc>
+                  </valItem>
+                  <valItem ident="M">
+                    <desc>masculine</desc>
+                  </valItem>
+                  <valItem ident="MED">
+                    <desc>middle voice</desc>
+                  </valItem>
+                  <valItem ident="N">
+                    <desc>neutre</desc>
+                  </valItem>
+                  <valItem ident="NOM">
+                    <desc>nominal</desc>
+                  </valItem>
+                  <valItem ident="OPT">
+                    <desc>optative</desc>
+                  </valItem>
+                  <valItem ident="PASS">
+                    <desc>passive voice</desc>
+                  </valItem>
+                  <valItem ident="PL">
+                    <desc>plural</desc>
+                  </valItem>
+                  <valItem ident="PLUPRF">
+                    <desc>past perfect</desc>
+                  </valItem>
+                  <valItem ident="PRF">
+                    <desc>perfect</desc>
+                  </valItem>
+                  <valItem ident="PRS">
+                    <desc>present</desc>
+                  </valItem>
+                  <valItem ident="SBJV">
+                    <desc>subjunctive</desc>
+                  </valItem>
+                  <valItem ident="SG">
+                    <desc>singular</desc>
+                  </valItem>
+                  <valItem ident="VOC">
+                    <desc>vocative</desc>
+                  </valItem>
+                  <valItem ident="INJ">
+                    <desc>injunctive</desc>
+                  </valItem>
+                  <valItem ident="CVB">
+                    <desc>converb</desc>
+                  </valItem>
+                  <valItem ident="INF">
+                    <desc>infinitive</desc>
+                  </valItem>
+                  <valItem ident="SG">
+                    <desc>singular</desc>
+                  </valItem>
+                  <valItem ident="VOC">
+                    <desc>vocative</desc>
+                  </valItem>
+                  <valItem ident="INJ">
+                    <desc>injunctive</desc>
+                  </valItem>
+                  <valItem ident="CVB">
+                    <desc>converb</desc>
+                  </valItem>
+                  <valItem ident="INF">
+                    <desc>infinitive</desc>
+                  </valItem>
+                  <valItem ident="PTCP">
+                    <desc>participle</desc>
+                  </valItem>
+                  <valItem ident="PPP">
+                    <desc>participle perfective passive</desc>
+                  </valItem>
+                  <valItem ident="DES">
+                    <desc>desiderative</desc>
+                  </valItem>
+                  <valItem ident="PREC">
+                    <desc>precative</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+
+        </schemaSpec>
+      </div>
+    </body>
+  </text>
+</TEI>
