@@ -1,6 +1,6 @@
 # c-salt_vedaweb_tei
 
-This repository contains the TEI files containing muitple versions of the Rigveda.
+This repository contains TEI files encoding multiple versions of the Rigveda.
 
 This data is available at:
 * The [VedaWeb Web App](https://vedaweb.uni-koeln.de/rigveda)
