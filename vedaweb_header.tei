@@ -802,7 +802,13 @@
                                 </biblFull>
                             </sourceDesc>
                         </fileDesc>
-                        <profileDesc/>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="eng">English</language>
+                                <language ident="deu">German</language>
+                            </langUsage>
+                           
+                        </profileDesc>
                     </biblFull>
 
                     <biblFull xml:id="geldner">
@@ -1025,7 +1031,6 @@
                         </fileDesc>
                         <profileDesc>
                             <langUsage>
-                                <language ident="eng">English</language>
                                 <language ident="deu">German</language>
                             </langUsage>
                         </profileDesc>
