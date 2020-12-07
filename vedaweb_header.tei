@@ -79,6 +79,106 @@
             </publicationStmt>
             <sourceDesc>
                 <listBibl>
+
+                    <biblFull xml:id="zurich">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rigveda - University of Zurich</title>
+                                <respStmt>
+                                    <resp>modified by</resp>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
+                                        >Distributed under a Creative Commons Attribution 4.0
+                                        International License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <p>
+                                    <persName>Prof. Dr. Paul Widmer</persName> and <persName>Dr.
+                                        Salvatore Scarlata</persName> from the <orgName>
+                                        <orgName>Institut für Vergleichende
+                                            Sprachwissenschaft</orgName>
+                                        <orgName>Universität Zürich</orgName>
+                                    </orgName> provided the VedaWeb project a Filemaker file that
+                                    was later transformed in Cologne into a Excel file</p>
+                                <p>This data contained a version of the Rigveda by <persName>Prof.
+                                        Dr. A. Lubotsky<affiliation>
+                                            <orgName>
+                                                <orgName>Indo-European Linguistics</orgName>
+                                                <orgName>Leiden University</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName> that had been morphosytactically annotated over the
+                                    course of more than 10 years at the University of Zurich</p>
+                                <p>It also contained for each token, if available, a reference to an
+                                    entry in Grassmann's dictionary for the Rigveda.</p>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <abstract>
+                                <p>These are the modifications made by <persName>Jakob
+                                        Halfmann</persName> and <persName>Natalie
+                                        Korobzow</persName>>to the data:</p>
+
+                                <list>
+                                    <item n="1">Disambiguation of the relevant categories, if
+                                        unspecified in Zurich data, according to the Grassmann
+                                        dictionary (updates from 6th edition partially included up
+                                        to page 274): <list>
+                                            <item n="a">case, gender and number for nouns, pronouns
+                                                (columns G–I) </item>
+                                            <item n="b">number, person, mood, tense and voice for
+                                                verbs (columns I–M) up to line 109216</item>
+                                            <item n="c">case, gender, number, tense and voice for
+                                                participles (columns G–I, L–M) up to line 109216 </item>
+                                            <item n="d">absolutives are marked as Abs. in columns N
+                                                and V </item>
+                                        </list>
+                                    </item>
+                                    <item n="2">Inconsistencies between the original file from
+                                        Zurich and the Grassmann dictionary as well as internal
+                                        inconsistencies in Grassmann are noted in column AE,
+                                        whenever they were noticed. Zurich data was overwritten by
+                                        conflicting Grassmann data in columns G–M but retained
+                                        elsewhere. </item>
+                                    <item n="3">Verb classes according to Whitney (1885) and Jamison
+                                        (1983) for class 10 in column Y, differences in root
+                                        spelling between Whitney and Grassmann are noted in column
+                                        Z. All potential verb classes provided by Whitney are given
+                                        for every occurrence of the root. </item>
+                                    <item n="4">Local particles and verbal forms containing them are
+                                        marked as LP in column AF. </item>
+                                    <item n="5">Comparatives and superlatives are marked as such in
+                                        column X and desideratives as Des. in column Y. </item>
+
+                                </list>
+                            </abstract>
+                        </profileDesc>
+                    </biblFull>
+
                     <biblFull xml:id="aufrecht">
                         <fileDesc>
                             <titleStmt>
@@ -533,7 +633,8 @@
                                     <title level="a">Sketch of the Historical Grammar of the Rig and
                                         Atharva Vedas</title>
                                     <date>1897</date>
-                                    <title level="j">Journal of the American Oriental Society </title>
+                                    <title level="j">Journal of the American Oriental
+                                        Society</title>
                                     <biblScope>18: 203–353.</biblScope>
                                 </bibl>
 
@@ -654,13 +755,175 @@
                         <profileDesc> </profileDesc>
                     </biblFull>
 
-
-                    <biblFull xml:id="zurich">
+                    <biblFull xml:id="geldner">
                         <fileDesc>
                             <titleStmt>
-                                <title>Rigveda - University of Zurich</title>
+                                <title>Der Rig-Veda, Part 1-3: Aus dem Sanskrit ins Deutsche
+                                    Übersetzt und mit einem laufenden Kommentar versehen von Karl
+                                    Friedrich Geldner</title>
                                 <respStmt>
-                                    <resp>modified by</resp>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title>Der Rig-Veda, Part 1-3: Aus dem Sanskrit ins Deutsche
+                                            Übersetzt und mit einem laufenden Kommentar versehen von
+                                            Karl Friedrich Geldner</title>
+                                        <author>
+                                            <persName>Karl Friedrich Geldner</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Harvard University Press</publisher>
+                                        <pubPlace>Cambridge, Massaschusets</pubPlace>
+                                        <date>2003</date>
+                                    </publicationStmt>
+                                    <seriesStmt>
+                                        <title>Harvard Oriental Series</title>
+                                        <biblScope unit="volume">63</biblScope>
+                                    </seriesStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="deu">German</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+                    <biblFull xml:id="grassmann">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rig-Veda</title>
+                                <respStmt>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">Rig-Veda</title>
+                                        <title type="sub">Übersetzt und mit kritischen und
+                                            erläuternden Anmerkunngen versehen von</title>
+                                        <author>
+                                            <persName>Herrmann Grassmann</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Brockhaus</publisher>
+                                        <pubPlace>Leipzig, Deutschland</pubPlace>
+                                        <date>1876-1877</date>
+                                    </publicationStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="deu">German</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+
+                    <biblFull xml:id="otto">
+                        <fileDesc>
+                            <titleStmt>
+                                <title type="main">Varuna-Hymnen des Rig-Veda</title>
+                                <title type="sub">Übersetzt von</title>
+                                <respStmt>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
                                     <persName>Jakob Halfmann<affiliation>
                                             <orgName>
                                                 <orgName>Historical Comparative Linguistics -
@@ -685,75 +948,479 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
-                                        International License.</licence>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
                                 </availability>
+
                             </publicationStmt>
                             <sourceDesc>
-                                <p>
-                                    <persName>Prof. Dr, Paul Widmer</persName> and <persName>Dr.
-                                        Salvatore Scarlata</persName> from the <orgName>
-                                        <orgName>Institut für Vergleichende
-                                            Sprachwissenschaft</orgName>
-                                        <orgName>Universität Zürich</orgName>
-                                    </orgName> provided the VedaWeb project a Filemaker file that
-                                    was transformed in Cologne into a Excel file</p>
-                                <p>This data contained a version of the Rigveda by <persName>Prof.
-                                        Dr. A. Lubotsky<affiliation>
-                                            <orgName>
-                                                <orgName>Indo-European Linguistics</orgName>
-                                                <orgName>Leiden University</orgName>
-                                            </orgName>
-                                        </affiliation>
-                                    </persName> that had been morphosytactically annotated over the
-                                    course of more than 10 years at the University of Zurich</p>
-                                <p>It also contained for each token, if available, a reference to an
-                                    entry in Grassmann's dictionary for the Rigveda.</p>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">Varuna-Hymnen des Rig-Veda</title>
+                                        <title type="sub">Übersetzt von</title>
+                                        <author>
+                                            <persName>Rudolf Otto</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher> Ludwig Röhrscheid Verlag</publisher>
+                                        <pubPlace>Bonn, Deutschland</pubPlace>
+                                        <date>1948</date>
+                                    </publicationStmt>
+                                </biblFull>
                             </sourceDesc>
                         </fileDesc>
                         <profileDesc>
-                            <abstract>
-                                <p>These are the modifications made by <persName>Jakob
-                                        Halfmann</persName> and <persName>Natalie
-                                        Korobzow</persName>>to the data:</p>
-
-                                <list>
-                                    <item n="1">Disambiguation of the relevant categories, if
-                                        unspecified in Zurich data, according to the Grassmann
-                                        dictionary (updates from 6th edition partially included up
-                                        to page 274): <list>
-                                            <item n="a">case, gender and number for nouns, pronouns
-                                                (columns G–I) </item>
-                                            <item n="b">number, person, mood, tense and voice for
-                                                verbs (columns I–M) up to line 109216</item>
-                                            <item n="c">case, gender, number, tense and voice for
-                                                participles (columns G–I, L–M) up to line 109216 </item>
-                                            <item n="d">absolutives are marked as Abs. in columns N
-                                                and V </item>
-                                        </list>
-                                    </item>
-                                    <item n="2">Inconsistencies between the original file from
-                                        Zurich and the Grassmann dictionary as well as internal
-                                        inconsistencies in Grassmann are noted in column AE,
-                                        whenever they were noticed. Zurich data was overwritten by
-                                        conflicting Grassmann data in columns G–M but retained
-                                        elsewhere. </item>
-                                    <item n="3">Verb classes according to Whitney (1885) and Jamison
-                                        (1983) for class 10 in column Y, differences in root
-                                        spelling between Whitney and Grassmann are noted in column
-                                        Z. All potential verb classes provided by Whitney are given
-                                        for every occurrence of the root. </item>
-                                    <item n="4">Local particles and verbal forms containing them are
-                                        marked as LP in column AF. </item>
-                                    <item n="5">Comparatives and superlatives are marked as such in
-                                        column X and desideratives as Des. in column Y. </item>
-
-                                </list>
-                            </abstract>
+                            <langUsage>
+                                <language ident="deu">German</language>
+                            </langUsage>
                         </profileDesc>
                     </biblFull>
 
+
+                    <biblFull xml:id="griffith">
+                        <fileDesc>
+                            <titleStmt>
+                                <title type="main">The Hymns of the Rigveda</title>
+                                <title type="sub">Translated with a popular commentary by</title>
+                                <author>
+                                    <persName>Ralph T. Griffith</persName>
+                                </author>
+                                <respStmt>
+                                    <resp>Modified by</resp>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <bibl>
+                                    <title>The Hymns of the Rigveda</title>
+                                    <respStmt>
+                                        <resp>Compiled by</resp>
+                                        <persName>Dr. Mārcis Gasūns</persName>
+                                    </respStmt>
+                                    <relatedItem type="source">
+                                        <biblStruct xml:id="griffith_src">
+                                            <monogr>
+                                                <title type="main">The Hymns of the Rigveda</title>
+                                                <title type="sub">Translated with a popular
+                                                  commentary by</title>
+                                                <author>
+                                                  <persName>Ralph T. Griffith</persName>
+                                                </author>
+                                                <imprint>
+                                                  <publisher>E. J. Lazarus</publisher>
+                                                  <pubPlace>Benares, India</pubPlace>
+                                                  <date>1890</date>
+                                                </imprint>
+                                            </monogr>
+                                        </biblStruct>
+                                    </relatedItem>
+                                    <availability>
+                                        <licence
+                                            target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                            >Distributed under a Creative Commons
+                                            Attribution-NonCommercial-ShareAlike 4.0 International
+                                            License.</licence>
+                                    </availability>
+                                    <ptr target="https://github.com/sanskrit-lexicon/rvlinks"/>
+                                </bibl>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="eng">English</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+
+                    <biblFull xml:id="macdonell">
+                        <fileDesc>
+                            <titleStmt>
+                                <title type="main">Hymns from the Rigveda</title>
+                                <title type="sub">Selected and Metrically Translated</title>
+                                <respStmt>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">Hymns from the Rigveda</title>
+                                        <title type="sub">Selected and Metrically Translated</title>
+                                        <author>
+                                            <persName>Arthur A. Macdonell</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Oxford University Press</publisher>
+                                        <pubPlace>London, UK</pubPlace>
+                                        <date>1922</date>
+                                    </publicationStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="deu">English</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+                    <biblFull xml:id="mueller">
+                        <fileDesc>
+                            <titleStmt>
+                                <title type="main">Vedic Hymns</title>
+                                <title type="sub">Part 1. Hymns to the Maruts, Rudra, Vâyu and
+                                    Vâta.</title>
+                                <respStmt>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">Vedic Hymns</title>
+                                        <title type="sub">Part 1. Hymns to the Maruts, Rudra, Vâyu
+                                            and Vâta.</title>
+                                        <author>
+                                            <persName>Max Müller</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Clarendon Press</publisher>
+                                        <pubPlace>Oxford, UK</pubPlace>
+                                        <date>1891</date>
+                                    </publicationStmt>
+                                    <seriesStmt>
+                                        <title>Sacred Books of the East</title>
+                                        <biblScope unit="volume">32</biblScope>
+                                    </seriesStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="deu">English</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+                    <biblFull xml:id="oldenberg">
+                        <fileDesc>
+                            <titleStmt>
+                                <title type="main">Vedic Hymns</title>
+                                <title type="sub">Part 2. Hymns to Agni (Mandalas I-V)</title>
+                                <respStmt>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">Vedic Hymns</title>
+                                        <title type="sub">Part 2. Hymns to Agni (Mandalas
+                                            I-V)</title>
+                                        <author>
+                                            <persName>Hermann Oldenberg</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Oxford University Press</publisher>
+                                        <pubPlace>Oxford, UK</pubPlace>
+                                        <date>1897</date>
+                                    </publicationStmt>
+                                    <seriesStmt>
+                                        <title>Sacred Books of the East</title>
+                                        <biblScope unit="volume">32</biblScope>
+                                    </seriesStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="deu">English</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+
+                    <biblFull xml:id="renou">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Études védiques et pāṇinéennes</title>
+                                <respStmt>
+                                    <resp>Extracted ad modified by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Jakob Halfmann<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                    <persName>Natalie Korobzow<affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull>
+                                    <titleStmt>
+                                        <title>Études védiques et pāṇinéennes</title>
+                                        <author>
+                                            <persName>Louis Renou</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Boccard</publisher>
+                                        <pubPlace>Paris, France</pubPlace>
+                                        <date>1955-1964</date>
+                                    </publicationStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="fra">French</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+                    
+                    <biblFull xml:id="elizerankova">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rigveda : Ṛgvēdasaṃhitā</title>
+                                <author>
+                                    <persName>Tatyana Yakovlevna Elizarenkova</persName>
+                                </author>
+                                <respStmt>
+                                    <resp>Modified by</resp>
+                                    <persName>Jakob Halfmann<affiliation>
+                                        <orgName>
+                                            <orgName>Historical Comparative Linguistics -
+                                                Department of Linguistics</orgName>
+                                            <orgName>University of Cologne</orgName>
+                                        </orgName>
+                                    </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence
+                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                        >Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <bibl>
+                                   <title>Rigveda : Ṛgvēdasaṃhitā</title>
+                                    <respStmt>
+                                        <resp>Compiled by</resp>
+                                        <persName>Dr. Mārcis Gasūns</persName>
+                                    </respStmt>
+                                    <relatedItem type="source">
+                                        <biblStruct xml:id="elizerankova_src">
+                                            <monogr>
+                                                <title>Rigveda : Ṛgvēdasaṃhitā</title>
+                                                <author>
+                                                    <persName>Tatyana Yakovlevna Elizarenkova</persName>
+                                                </author>
+                                                <imprint>
+                                                    <pubPlace>Moskow, Russia</pubPlace>
+                                                    <date>1989-1999</date>
+                                                </imprint>
+                                            </monogr>
+                                        </biblStruct>
+                                    </relatedItem>
+                                    <availability>
+                                        <licence
+                                            target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                            >Distributed under a Creative Commons
+                                            Attribution-NonCommercial-ShareAlike 4.0 International
+                                            License.</licence>
+                                    </availability>
+                                    <ptr target="https://github.com/sanskrit-lexicon/rvlinks"/>
+                                </bibl>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="rus">Russian</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
 
                 </listBibl>
             </sourceDesc>
