@@ -79,6 +79,278 @@
             </publicationStmt>
             <sourceDesc>
                 <listBibl>
+                    
+                    <biblFull xml:id="addressees">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rigveda - Addressees</title>
+                                <respStmt>
+                                    <resp>compiled by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                        <orgName>
+                                            <orgName>Institut für Altertumswissenschaften -
+                                                Vergleichende Sprachwissenschaft</orgName>
+                                            <orgName>Julius-Maximilians-Universität
+                                                Würzburg</orgName>
+                                        </orgName>
+                                    </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
+                                        >Distributed under a Creative Commons Attribution 4.0
+                                        International License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull xml:id="addressees_src">
+                                    <titleStmt>
+                                        <title type="main">Der Rig-Veda</title>
+                                        <title type="sub"> Aus dem Sanskrit ins Deutsche übersetzt
+                                            und mit einem laufenden Kommentar versehen von</title>
+                                        <author>
+                                            <persName>Karl Friedrich Geldner</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Harvard University Press</publisher>
+                                        <pubPlace>Cambridge, United States</pubPlace>
+                                        <date>1951</date>
+                                    </publicationStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="eng">English</language>
+                                <language ident="deu">German</language>
+                            </langUsage>
+                            
+                        </profileDesc>
+                    </biblFull>
+                    
+                    <biblFull xml:id="strata">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rigveda - Strata Information</title>
+                                <respStmt>
+                                    <resp>compiled by</resp>
+                                    <persName>Dr. Dieter Gunkel<affiliation>
+                                        <orgName>
+                                            <orgName>Historical Linguistics - Department of
+                                                Classical Studies</orgName>
+                                            <orgName>University of Richmond</orgName>
+                                        </orgName>
+                                    </affiliation>
+                                    </persName>
+                                    <persName>Prof. Dr. Kevin M. Ryan<affiliation>
+                                        <orgName>
+                                            <orgName>Department of Linguistics</orgName>
+                                            <orgName>Harvard University</orgName>
+                                        </orgName>
+                                    </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
+                                        >Distributed under a Creative Commons Attribution 4.0
+                                        International License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull xml:id="strata_src">
+                                    <titleStmt>
+                                        <title>Vedic Metre in its Historical Development</title>
+                                        <author>
+                                            <persName>Edward Vernon Arnold</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Unversity Press</publisher>
+                                        <pubPlace>Cambridge, United Kingdom</pubPlace>
+                                        <date>1905</date>
+                                    </publicationStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc> </profileDesc>
+                    </biblFull>
+                    
+                    <biblFull xml:id="stanza_properties">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rigveda - Stanza Properties</title>
+                                <respStmt>
+                                    <resp>compiled by</resp>
+                                    <persName>Dr. Dieter Gunkel<affiliation>
+                                        <orgName>
+                                            <orgName>Historical Linguistics - Department of
+                                                Classical Studies</orgName>
+                                            <orgName>University of Richmond</orgName>
+                                        </orgName>
+                                    </affiliation>
+                                    </persName>
+                                    <persName>Dr. Salvatore Scarlata<affiliation>
+                                        <orgName>
+                                            <orgName>Institut für Vergleichende
+                                                Sprachwissenschaft</orgName>
+                                            <orgName>Universität Zürich</orgName>
+                                        </orgName>
+                                    </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
+                                        >Distributed under a Creative Commons Attribution 4.0
+                                        International License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc xml:id="stanza_properties_src">
+                                
+                                <bibl>
+                                    <author>Edward Vernon Arnold</author>
+                                    <title level="a">Sketch of the Historical Grammar of the Rig and
+                                        Atharva Vedas</title>
+                                    <date>1897</date>
+                                    <title level="j">Journal of the American Oriental
+                                        Society</title>
+                                    <biblScope>18: 203–353.</biblScope>
+                                </bibl>
+                                
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">Rig-veda</title>
+                                        <title type="sub">Übersetzt und mit kritischen erläuternden
+                                            Anmerkungen versehen</title>
+                                        <author>
+                                            <persName>Hermann Grassmann</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Brockhaus</publisher>
+                                        <pubPlace>Leipzig, Deutschland</pubPlace>
+                                        <date>1876-7</date>
+                                    </publicationStmt>
+                                </biblFull>
+                                
+                                <biblFull>
+                                    <titleStmt>
+                                        <title>Die Hymnen des Ṛigveda. Metrische und
+                                            textgeschichtliche Prolegomena</title>
+                                        <author>
+                                            <persName>Hermann Oldenberg</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Hertz</publisher>
+                                        <pubPlace>Berlin, Deutschland</pubPlace>
+                                        <date>1888</date>
+                                    </publicationStmt>
+                                </biblFull>
+                                
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">R̥gveda: Textkritische und exegetische
+                                            Noten</title>
+                                        <title type="sub">Erstes bis sechstes Buch</title>
+                                        <author>
+                                            <persName>Hermann Oldenberg</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Weidmann</publisher>
+                                        <pubPlace>Berlin, Deutschland</pubPlace>
+                                        <date>1909</date>
+                                    </publicationStmt>
+                                    <seriesStmt>
+                                        <title type="main">Abhandlungen der kgl. Gesellschaft der
+                                            Wissenschaften zu Gööttingen</title>
+                                        <title type="sub">Philologisch-historische Klasse</title>
+                                        <biblScope unit="volume">XI.5</biblScope>
+                                    </seriesStmt>
+                                </biblFull>
+                                
+                                <biblFull>
+                                    <titleStmt>
+                                        <title type="main">R̥gveda: Textkritische und exegetische
+                                            Noten</title>
+                                        <title type="sub">Siebentes bis zehntes Buch</title>
+                                        <author>
+                                            <persName>Hermann Oldenberg</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Weidmann</publisher>
+                                        <pubPlace>Berlin, Deutschland</pubPlace>
+                                        <date>1912</date>
+                                    </publicationStmt>
+                                    <seriesStmt>
+                                        <title type="main">Abhandlungen der kgl. Gesellschaft der
+                                            Wissenschaften zu Gööttingen</title>
+                                        <title type="sub">Philologisch-historische Klasse</title>
+                                        <biblScope unit="volume">XIII.3</biblScope>
+                                    </seriesStmt>
+                                </biblFull>
+                                
+                                <bibl type="article" subtype="book_chapter">
+                                    <author>
+                                        <name>Michael Witzel</name>
+                                    </author>
+                                    <title level="a">R̥gvedic History: Poets, Chieftains and
+                                        Polities</title>
+                                    <bibl type="monogr">
+                                        <title level="m">The Indo-Aryans of Ancient South
+                                            Asia</title>
+                                        <editor>
+                                            <name>George Erdosy</name>
+                                        </editor>
+                                        <pubPlace>Berlin, Deutschland</pubPlace>
+                                        <publisher>De Gruyter</publisher>
+                                        <date>1995</date>. </bibl>
+                                </bibl>
+                                
+                                <biblFull>
+                                    <titleStmt>
+                                        <title>Stilgeschichte und Chronologie des Ṛgveda</title>
+                                        <author>
+                                            <persName>Walther Wüst</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Deutsche Morgenländische Gesellschaft</publisher>
+                                        <pubPlace>Leipzig, Deutschland</pubPlace>
+                                        <date>1928</date>
+                                    </publicationStmt>
+                                    <seriesStmt>
+                                        <title>Abhandlungen der kgl. Gesellschaft der Wissenschaften
+                                            zu Gööttingen</title>
+                                        <biblScope unit="volume">XII.4</biblScope>
+                                    </seriesStmt>
+                                </biblFull>
+                                
+                            </sourceDesc>
+                        </fileDesc>
+                        
+                        <profileDesc> </profileDesc>
+                    </biblFull>
 
                     <biblFull xml:id="zurich">
                         <fileDesc>
@@ -538,278 +810,12 @@
                     </biblFull>
 
 
-                    <biblFull xml:id="strata">
-                        <fileDesc>
-                            <titleStmt>
-                                <title>Rigveda - Strata Information</title>
-                                <respStmt>
-                                    <resp>compiled by</resp>
-                                    <persName>Dr. Dieter Gunkel<affiliation>
-                                            <orgName>
-                                                <orgName>Historical Linguistics - Department of
-                                                  Classical Studies</orgName>
-                                                <orgName>University of Richmond</orgName>
-                                            </orgName>
-                                        </affiliation>
-                                    </persName>
-                                    <persName>Prof. Dr. Kevin M. Ryan<affiliation>
-                                            <orgName>
-                                                <orgName>Department of Linguistics</orgName>
-                                                <orgName>Harvard University</orgName>
-                                            </orgName>
-                                        </affiliation>
-                                    </persName>
-                                </respStmt>
-                            </titleStmt>
-                            <publicationStmt>
-                                <publisher>Cologne Center for e-Humanities
-                                    <abbr>CCeH</abbr></publisher>
-                                <pubPlace>Cologne, Germany</pubPlace>
-                                <date>2020</date>
-                                <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
-                                        International License.</licence>
-                                </availability>
-                            </publicationStmt>
-                            <sourceDesc>
-                                <biblFull xml:id="strata_src">
-                                    <titleStmt>
-                                        <title>Vedic Metre in its Historical Development</title>
-                                        <author>
-                                            <persName>Edward Vernon Arnold</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Unversity Press</publisher>
-                                        <pubPlace>Cambridge, United Kingdom</pubPlace>
-                                        <date>1905</date>
-                                    </publicationStmt>
-                                </biblFull>
-                            </sourceDesc>
-                        </fileDesc>
-                        <profileDesc> </profileDesc>
-                    </biblFull>
+                    
 
-                    <biblFull xml:id="stanza_properties">
-                        <fileDesc>
-                            <titleStmt>
-                                <title>Rigveda - Stanza Properties</title>
-                                <respStmt>
-                                    <resp>compiled by</resp>
-                                    <persName>Dr. Dieter Gunkel<affiliation>
-                                            <orgName>
-                                                <orgName>Historical Linguistics - Department of
-                                                  Classical Studies</orgName>
-                                                <orgName>University of Richmond</orgName>
-                                            </orgName>
-                                        </affiliation>
-                                    </persName>
-                                    <persName>Dr. Salvatore Scarlata<affiliation>
-                                            <orgName>
-                                                <orgName>Institut für Vergleichende
-                                                  Sprachwissenschaft</orgName>
-                                                <orgName>Universität Zürich</orgName>
-                                            </orgName>
-                                        </affiliation>
-                                    </persName>
-                                </respStmt>
-                            </titleStmt>
-                            <publicationStmt>
-                                <publisher>Cologne Center for e-Humanities
-                                    <abbr>CCeH</abbr></publisher>
-                                <pubPlace>Cologne, Germany</pubPlace>
-                                <date>2020</date>
-                                <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
-                                        International License.</licence>
-                                </availability>
-                            </publicationStmt>
-                            <sourceDesc xml:id="stanza_properties_src">
-
-                                <bibl>
-                                    <author>Edward Vernon Arnold</author>
-                                    <title level="a">Sketch of the Historical Grammar of the Rig and
-                                        Atharva Vedas</title>
-                                    <date>1897</date>
-                                    <title level="j">Journal of the American Oriental
-                                        Society</title>
-                                    <biblScope>18: 203–353.</biblScope>
-                                </bibl>
-
-                                <biblFull>
-                                    <titleStmt>
-                                        <title type="main">Rig-veda</title>
-                                        <title type="sub">Übersetzt und mit kritischen erläuternden
-                                            Anmerkungen versehen</title>
-                                        <author>
-                                            <persName>Hermann Grassmann</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Brockhaus</publisher>
-                                        <pubPlace>Leipzig, Deutschland</pubPlace>
-                                        <date>1876-7</date>
-                                    </publicationStmt>
-                                </biblFull>
-
-                                <biblFull>
-                                    <titleStmt>
-                                        <title>Die Hymnen des Ṛigveda. Metrische und
-                                            textgeschichtliche Prolegomena</title>
-                                        <author>
-                                            <persName>Hermann Oldenberg</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Hertz</publisher>
-                                        <pubPlace>Berlin, Deutschland</pubPlace>
-                                        <date>1888</date>
-                                    </publicationStmt>
-                                </biblFull>
-
-                                <biblFull>
-                                    <titleStmt>
-                                        <title type="main">R̥gveda: Textkritische und exegetische
-                                            Noten</title>
-                                        <title type="sub">Erstes bis sechstes Buch</title>
-                                        <author>
-                                            <persName>Hermann Oldenberg</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Weidmann</publisher>
-                                        <pubPlace>Berlin, Deutschland</pubPlace>
-                                        <date>1909</date>
-                                    </publicationStmt>
-                                    <seriesStmt>
-                                        <title type="main">Abhandlungen der kgl. Gesellschaft der
-                                            Wissenschaften zu Gööttingen</title>
-                                        <title type="sub">Philologisch-historische Klasse</title>
-                                        <biblScope unit="volume">XI.5</biblScope>
-                                    </seriesStmt>
-                                </biblFull>
-
-                                <biblFull>
-                                    <titleStmt>
-                                        <title type="main">R̥gveda: Textkritische und exegetische
-                                            Noten</title>
-                                        <title type="sub">Siebentes bis zehntes Buch</title>
-                                        <author>
-                                            <persName>Hermann Oldenberg</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Weidmann</publisher>
-                                        <pubPlace>Berlin, Deutschland</pubPlace>
-                                        <date>1912</date>
-                                    </publicationStmt>
-                                    <seriesStmt>
-                                        <title type="main">Abhandlungen der kgl. Gesellschaft der
-                                            Wissenschaften zu Gööttingen</title>
-                                        <title type="sub">Philologisch-historische Klasse</title>
-                                        <biblScope unit="volume">XIII.3</biblScope>
-                                    </seriesStmt>
-                                </biblFull>
-
-                                <bibl type="article" subtype="book_chapter">
-                                    <author>
-                                        <name>Michael Witzel</name>
-                                    </author>
-                                    <title level="a">R̥gvedic History: Poets, Chieftains and
-                                        Polities</title>
-                                    <bibl type="monogr">
-                                        <title level="m">The Indo-Aryans of Ancient South
-                                            Asia</title>
-                                        <editor>
-                                            <name>George Erdosy</name>
-                                        </editor>
-                                        <pubPlace>Berlin, Deutschland</pubPlace>
-                                        <publisher>De Gruyter</publisher>
-                                        <date>1995</date>. </bibl>
-                                </bibl>
-
-                                <biblFull>
-                                    <titleStmt>
-                                        <title>Stilgeschichte und Chronologie des Ṛgveda</title>
-                                        <author>
-                                            <persName>Walther Wüst</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Deutsche Morgenländische Gesellschaft</publisher>
-                                        <pubPlace>Leipzig, Deutschland</pubPlace>
-                                        <date>1928</date>
-                                    </publicationStmt>
-                                    <seriesStmt>
-                                        <title>Abhandlungen der kgl. Gesellschaft der Wissenschaften
-                                            zu Gööttingen</title>
-                                        <biblScope unit="volume">XII.4</biblScope>
-                                    </seriesStmt>
-                                </biblFull>
-
-                            </sourceDesc>
-                        </fileDesc>
-
-                        <profileDesc> </profileDesc>
-                    </biblFull>
+                    
 
 
-                    <biblFull xml:id="addressees">
-                        <fileDesc>
-                            <titleStmt>
-                                <title>Rigveda - Addressees</title>
-                                <respStmt>
-                                    <resp>compiled by</resp>
-                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
-                                            <orgName>
-                                                <orgName>Institut für Altertumswissenschaften -
-                                                  Vergleichende Sprachwissenschaft</orgName>
-                                                <orgName>Julius-Maximilians-Universität
-                                                  Würzburg</orgName>
-                                            </orgName>
-                                        </affiliation>
-                                    </persName>
-                                </respStmt>
-                            </titleStmt>
-                            <publicationStmt>
-                                <publisher>Cologne Center for e-Humanities
-                                    <abbr>CCeH</abbr></publisher>
-                                <pubPlace>Cologne, Germany</pubPlace>
-                                <date>2020</date>
-                                <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
-                                        International License.</licence>
-                                </availability>
-                            </publicationStmt>
-                            <sourceDesc>
-                                <biblFull xml:id="addressees_src">
-                                    <titleStmt>
-                                        <title type="main">Der Rig-Veda</title>
-                                        <title type="sub"> Aus dem Sanskrit ins Deutsche übersetzt
-                                            und mit einem laufenden Kommentar versehen von</title>
-                                        <author>
-                                            <persName>Karl Friedrich Geldner</persName>
-                                        </author>
-                                    </titleStmt>
-                                    <publicationStmt>
-                                        <publisher>Harvard University Press</publisher>
-                                        <pubPlace>Cambridge, United States</pubPlace>
-                                        <date>1951</date>
-                                    </publicationStmt>
-                                </biblFull>
-                            </sourceDesc>
-                        </fileDesc>
-                        <profileDesc>
-                            <langUsage>
-                                <language ident="eng">English</language>
-                                <language ident="deu">German</language>
-                            </langUsage>
-                           
-                        </profileDesc>
-                    </biblFull>
+                    
 
                     <biblFull xml:id="geldner">
                         <fileDesc>
@@ -818,7 +824,7 @@
                                     Übersetzt und mit einem laufenden Kommentar versehen von Karl
                                     Friedrich Geldner</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -895,7 +901,7 @@
                             <titleStmt>
                                 <title>Rig-Veda</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -970,7 +976,7 @@
                                 <title type="main">Varuna-Hymnen des Rig-Veda</title>
                                 <title type="sub">Übersetzt von</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -1119,7 +1125,7 @@
                                 <title type="main">Hymns from the Rigveda</title>
                                 <title type="sub">Selected and Metrically Translated</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -1191,7 +1197,7 @@
                                 <title type="sub">Part 1. Hymns to the Maruts, Rudra, Vâyu and
                                     Vâta.</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -1267,7 +1273,7 @@
                                 <title type="main">Vedic Hymns</title>
                                 <title type="sub">Part 2. Hymns to Agni (Mandalas I-V)</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -1343,7 +1349,7 @@
                             <titleStmt>
                                 <title>Études védiques et pāṇinéennes</title>
                                 <respStmt>
-                                    <resp>Extracted ad modified by</resp>
+                                    <resp>Extracted and modified by</resp>
                                     <persName>Prof. Dr. Daniel Kölligan<affiliation>
                                             <orgName>
                                                 <orgName>Institut für Altertumswissenschaften -
@@ -1407,7 +1413,7 @@
                         </profileDesc>
                     </biblFull>
 
-                    <biblFull xml:id="elizerankova">
+                    <biblFull xml:id="elizarenkova">
                         <fileDesc>
                             <titleStmt>
                                 <title>Rigveda : Ṛgvēdasaṃhitā</title>
@@ -1447,7 +1453,7 @@
                                         <persName>Dr. Mārcis Gasūns</persName>
                                     </respStmt>
                                     <relatedItem type="source">
-                                        <biblStruct xml:id="elizerankova_src">
+                                        <biblStruct xml:id="elizarenkova_src">
                                             <monogr>
                                                 <title>Rigveda : Ṛgvēdasaṃhitā</title>
                                                 <author>
