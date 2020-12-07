@@ -582,7 +582,7 @@
                                     </titleStmt>
                                     <publicationStmt>
                                         <publisher>Unversity Press</publisher>
-                                        <pubPlace>Cambridge, UK</pubPlace>
+                                        <pubPlace>Cambridge, United Kingdom</pubPlace>
                                         <date>1905</date>
                                     </publicationStmt>
                                 </biblFull>
@@ -753,6 +753,56 @@
                         </fileDesc>
 
                         <profileDesc> </profileDesc>
+                    </biblFull>
+
+
+                    <biblFull xml:id="addressees">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Rigveda - Addressees</title>
+                                <respStmt>
+                                    <resp>compiled by</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+                                <availability>
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
+                                        >Distributed under a Creative Commons Attribution 4.0
+                                        International License.</licence>
+                                </availability>
+                            </publicationStmt>
+                            <sourceDesc>
+                                <biblFull xml:id="addressees_src">
+                                    <titleStmt>
+                                        <title type="main">Der Rig-Veda</title>
+                                        <title type="sub"> Aus dem Sanskrit ins Deutsche übersetzt
+                                            und mit einem laufenden Kommentar versehen von</title>
+                                        <author>
+                                            <persName>Karl Friedrich Geldner</persName>
+                                        </author>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <publisher>Harvard University Press</publisher>
+                                        <pubPlace>Cambridge, United States</pubPlace>
+                                        <date>1951</date>
+                                    </publicationStmt>
+                                </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc/>
                     </biblFull>
 
                     <biblFull xml:id="geldner">
@@ -1115,7 +1165,7 @@
                                     </titleStmt>
                                     <publicationStmt>
                                         <publisher>Oxford University Press</publisher>
-                                        <pubPlace>London, UK</pubPlace>
+                                        <pubPlace>London, United Kingdom</pubPlace>
                                         <date>1922</date>
                                     </publicationStmt>
                                 </biblFull>
@@ -1188,7 +1238,7 @@
                                     </titleStmt>
                                     <publicationStmt>
                                         <publisher>Clarendon Press</publisher>
-                                        <pubPlace>Oxford, UK</pubPlace>
+                                        <pubPlace>Oxford, United Kingdom</pubPlace>
                                         <date>1891</date>
                                     </publicationStmt>
                                     <seriesStmt>
@@ -1264,7 +1314,7 @@
                                     </titleStmt>
                                     <publicationStmt>
                                         <publisher>Oxford University Press</publisher>
-                                        <pubPlace>Oxford, UK</pubPlace>
+                                        <pubPlace>Oxford, United Kingdom</pubPlace>
                                         <date>1897</date>
                                     </publicationStmt>
                                     <seriesStmt>
@@ -1350,7 +1400,7 @@
                             </langUsage>
                         </profileDesc>
                     </biblFull>
-                    
+
                     <biblFull xml:id="elizerankova">
                         <fileDesc>
                             <titleStmt>
@@ -1361,12 +1411,12 @@
                                 <respStmt>
                                     <resp>Modified by</resp>
                                     <persName>Jakob Halfmann<affiliation>
-                                        <orgName>
-                                            <orgName>Historical Comparative Linguistics -
-                                                Department of Linguistics</orgName>
-                                            <orgName>University of Cologne</orgName>
-                                        </orgName>
-                                    </affiliation>
+                                            <orgName>
+                                                <orgName>Historical Comparative Linguistics -
+                                                  Department of Linguistics</orgName>
+                                                <orgName>University of Cologne</orgName>
+                                            </orgName>
+                                        </affiliation>
                                     </persName>
                                 </respStmt>
                             </titleStmt>
@@ -1385,7 +1435,7 @@
                             </publicationStmt>
                             <sourceDesc>
                                 <bibl>
-                                   <title>Rigveda : Ṛgvēdasaṃhitā</title>
+                                    <title>Rigveda : Ṛgvēdasaṃhitā</title>
                                     <respStmt>
                                         <resp>Compiled by</resp>
                                         <persName>Dr. Mārcis Gasūns</persName>
@@ -1395,11 +1445,12 @@
                                             <monogr>
                                                 <title>Rigveda : Ṛgvēdasaṃhitā</title>
                                                 <author>
-                                                    <persName>Tatyana Yakovlevna Elizarenkova</persName>
+                                                  <persName>Tatyana Yakovlevna
+                                                  Elizarenkova</persName>
                                                 </author>
                                                 <imprint>
-                                                    <pubPlace>Moskow, Russia</pubPlace>
-                                                    <date>1989-1999</date>
+                                                  <pubPlace>Moskow, Russia</pubPlace>
+                                                  <date>1989-1999</date>
                                                 </imprint>
                                             </monogr>
                                         </biblStruct>
