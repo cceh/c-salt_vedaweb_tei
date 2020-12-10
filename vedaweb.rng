@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-12-10T15:04:11Z. .
+Schema generated from ODD source 2020-12-10T19:32:20Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -63,6 +63,17 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
          <attribute name="hand">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a handNote element describing the hand considered responsible for the content of the element concerned.</a:documentation>
             <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.cReferencing.attributes">
+      <ref name="vedaweb_att.cReferencing.attribute.cRef"/>
+   </define>
+   <define name="vedaweb_att.cReferencing.attribute.cRef">
+      <optional>
+         <attribute name="cRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a refsDecl element in the TEI header</a:documentation>
+            <data type="string"/>
          </attribute>
       </optional>
    </define>
@@ -435,7 +446,6 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    </define>
    <define name="vedaweb_att.global.attributes">
       <ref name="vedaweb_att.global.rendition.attributes"/>
-      <ref name="vedaweb_att.global.linking.attributes"/>
       <ref name="vedaweb_att.global.analytic.attributes"/>
       <ref name="vedaweb_att.global.responsibility.attributes"/>
       <ref name="vedaweb_att.global.source.attributes"/>
@@ -500,6 +510,23 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                <value>preserve</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the intent that applications preserve all white space</a:documentation>
             </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.internetMedia.attributes">
+      <ref name="vedaweb_att.internetMedia.attribute.mimeType"/>
+   </define>
+   <define name="vedaweb_att.internetMedia.attribute.mimeType">
+      <optional>
+         <attribute name="mimeType">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </oneOrMore>
+            </list>
          </attribute>
       </optional>
    </define>
@@ -671,46 +698,6 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
                <value>none</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">no further evaluation of targets is carried out beyond that needed to find the element specified in the pointer's target.</a:documentation>
             </choice>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.pointing.group.attributes">
-      <ref name="vedaweb_att.pointing.attributes"/>
-      <ref name="vedaweb_att.typed.attributes"/>
-      <ref name="vedaweb_att.pointing.group.attribute.domains"/>
-      <ref name="vedaweb_att.pointing.group.attribute.targFunc"/>
-   </define>
-   <define name="vedaweb_att.pointing.group.attribute.domains">
-      <optional>
-         <attribute name="domains">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">optionally specifies the identifiers of the elements within which all elements indicated by the contents of this element lie.</a:documentation>
-            <list>
-               <data type="anyURI"/>
-               <data type="anyURI"/>
-               <zeroOrMore>
-                  <data type="anyURI"/>
-               </zeroOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.pointing.group.attribute.targFunc">
-      <optional>
-         <attribute name="targFunc">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(target function) describes the function of each of the values of the target attribute of the enclosed link, join, or alt tags.</a:documentation>
-            <list>
-               <data type="token">
-                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-               </data>
-               <data type="token">
-                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-               </data>
-               <zeroOrMore>
-                  <data type="token">
-                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                  </data>
-               </zeroOrMore>
-            </list>
          </attribute>
       </optional>
    </define>
@@ -925,14 +912,15 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </choice>
    </define>
    <define name="vedaweb_model.ptrLike">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_ptr"/>
+      </choice>
    </define>
    <define name="vedaweb_model.lPart">
       <notAllowed/>
    </define>
    <define name="vedaweb_model.global.meta">
       <choice>
-         <ref name="vedaweb_linkGrp"/>
          <ref name="vedaweb_fs"/>
       </choice>
    </define>
@@ -1470,6 +1458,26 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_ptr">
+      <element name="ptr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pointer) defines a pointer to another location. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
+         <empty/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="vedaweb-ptr-ptrAtts-constraint-report-6">
+            <rule context="tei:ptr">
+               <report test="@target and @cRef">Only one of the
+attributes @target and @cRef may be supplied on <name/>.</report>
+            </rule>
+         </pattern>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.pointing.attributes"/>
+         <ref name="vedaweb_att.internetMedia.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <ref name="vedaweb_att.declaring.attributes"/>
+         <ref name="vedaweb_att.cReferencing.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_list">
       <element name="list">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any sequence of items organized as a list. [3.7. Lists]</a:documentation>
@@ -1658,7 +1666,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-l-abstractModel-structure-l-constraint-report-6">
+                  id="vedaweb-l-abstractModel-structure-l-constraint-report-7">
             <rule context="tei:l">
                <report test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
@@ -1714,7 +1722,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-lg-abstractModel-structure-l-constraint-report-7">
+                  id="vedaweb-lg-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:lg">
                <report test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
         Abstract model violation: Lines may not contain line groups.
@@ -1729,14 +1737,6 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <ref name="vedaweb_att.global.rendition.attribute.rend"/>
          <ref name="vedaweb_att.global.rendition.attribute.style"/>
          <ref name="vedaweb_att.global.rendition.attribute.rendition"/>
-         <ref name="vedaweb_att.global.linking.attribute.corresp"/>
-         <ref name="vedaweb_att.global.linking.attribute.synch"/>
-         <ref name="vedaweb_att.global.linking.attribute.sameAs"/>
-         <ref name="vedaweb_att.global.linking.attribute.copyOf"/>
-         <ref name="vedaweb_att.global.linking.attribute.next"/>
-         <ref name="vedaweb_att.global.linking.attribute.prev"/>
-         <ref name="vedaweb_att.global.linking.attribute.exclude"/>
-         <ref name="vedaweb_att.global.linking.attribute.select"/>
          <ref name="vedaweb_att.global.analytic.attribute.ana"/>
          <ref name="vedaweb_att.global.responsibility.attribute.cert"/>
          <ref name="vedaweb_att.global.responsibility.attribute.resp"/>
@@ -1885,107 +1885,6 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <ref name="vedaweb_att.typed.attributes"/>
          <ref name="vedaweb_att.linguistic.attributes"/>
          <ref name="vedaweb_att.notated.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="vedaweb_att.global.linking.attributes">
-      <ref name="vedaweb_att.global.linking.attribute.corresp"/>
-      <ref name="vedaweb_att.global.linking.attribute.synch"/>
-      <ref name="vedaweb_att.global.linking.attribute.sameAs"/>
-      <ref name="vedaweb_att.global.linking.attribute.copyOf"/>
-      <ref name="vedaweb_att.global.linking.attribute.next"/>
-      <ref name="vedaweb_att.global.linking.attribute.prev"/>
-      <ref name="vedaweb_att.global.linking.attribute.exclude"/>
-      <ref name="vedaweb_att.global.linking.attribute.select"/>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.corresp">
-      <optional>
-         <attribute name="corresp">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corresponds) points to elements that correspond to the current element in some way.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.synch">
-      <optional>
-         <attribute name="synch">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(synchronous) points to elements that are synchronous with the current element.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.sameAs">
-      <optional>
-         <attribute name="sameAs">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element that is the same as the current element.</a:documentation>
-            <data type="anyURI"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.copyOf">
-      <optional>
-         <attribute name="copyOf">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to an element of which the current element is a copy.</a:documentation>
-            <data type="anyURI"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.next">
-      <optional>
-         <attribute name="next">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the next element of a virtual aggregate of which the current element is part.</a:documentation>
-            <data type="anyURI"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.prev">
-      <optional>
-         <attribute name="prev">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(previous) points to the previous element of a virtual aggregate of which the current element is part.</a:documentation>
-            <data type="anyURI"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.exclude">
-      <optional>
-         <attribute name="exclude">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to elements that are in exclusive alternation with the current element.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.global.linking.attribute.select">
-      <optional>
-         <attribute name="select">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">selects one or more alternants; if one alternant is selected, the ambiguity or uncertainty is marked as resolved. If more than one alternant is selected, the degree of ambiguity or uncertainty is marked as reduced by the number of alternants not selected.</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="anyURI"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_linkGrp">
-      <element name="linkGrp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link group) defines a collection of associations or hypertextual links. [16.1. Links]</a:documentation>
-         <oneOrMore>
-            <empty/>
-         </oneOrMore>
-         <ref name="vedaweb_att.global.attributes"/>
-         <ref name="vedaweb_att.pointing.group.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2670,7 +2569,7 @@ Feature Value]</a:documentation>
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-div-abstractModel-structure-l-constraint-report-8">
+                  id="vedaweb-div-abstractModel-structure-l-constraint-report-9">
             <rule context="tei:div">
                <report test="ancestor::tei:l">
         Abstract model violation: Lines may not contain higher-level structural elements such as div.
@@ -2678,7 +2577,7 @@ Feature Value]</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-div-abstractModel-structure-p-constraint-report-9">
+                  id="vedaweb-div-abstractModel-structure-p-constraint-report-10">
             <rule context="tei:div">
                <report test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div.

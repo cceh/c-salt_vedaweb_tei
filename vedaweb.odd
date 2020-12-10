@@ -23,9 +23,8 @@
         <head>TEI Specifications</head>
         <schemaSpec ident="vedaweb" xml:lang="en" prefix="vedaweb_" targetLang="en" docLang="en">
           <moduleRef key="analysis" include="w"/>
-          <moduleRef key="linking" include="linkGrp"/>
           <moduleRef key="iso-fs" include="fs f symbol string vAlt"/>
-          <moduleRef key="core" include="p list item head author title l lg"/>
+          <moduleRef key="core" include="p list item head author title l lg ptr"/>
           <moduleRef key="tei"/>
           <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc"/>
           <moduleRef key="textstructure" include="TEI text body div front back"/>
