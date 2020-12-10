@@ -1,6 +1,7 @@
 # c-salt_vedaweb_tei
 
-TEI files containing multiple versions of the Rigveda accessible also at:
+The information contained in these TEI files can also be accessed:
 
-* The [VedaWeb Web App](https://vedaweb.uni-koeln.de/rigveda)
-* The [VedaWeb REST API](https://vedaweb.uni-koeln.de/rigveda/swagger-ui.html)
+- Source files: https://github.com/cceh/c-salt_vedaweb_sources
+- Through a REST-API: https://vedaweb.uni-koeln.de/rigveda/swagger-ui.html
+- Though a React web app: https://vedaweb.uni-koeln.de/rigveda/
