@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
   <teiHeader>
     <fileDesc>
@@ -24,14 +23,19 @@
         <schemaSpec ident="vedaweb" xml:lang="en" prefix="vedaweb_" targetLang="en" docLang="en">
           <moduleRef key="analysis" include="w"/>
           <moduleRef key="iso-fs" include="fs f symbol string vAlt"/>
-          <moduleRef key="core" include="p list item head author title l lg ptr"/>
+          <moduleRef key="core"
+            include="p list item head author title l lg ptr respStmt resp publisher date teiCorpus abbr pubPlace listBibl bibl biblScope name editor email relatedItem biblStruct monogr imprint"/>
           <moduleRef key="tei"/>
-          <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc"/>
+          <moduleRef key="header"
+            include="teiHeader fileDesc titleStmt publicationStmt sourceDesc funder availability editionStmt edition biblFull licence profileDesc langUsage language seriesStmt abstract"/>
           <moduleRef key="textstructure" include="TEI text body div front back"/>
+          <moduleRef key="namesdates" include="persName person orgName affiliation"/>
+          <moduleRef key="dictionaries" include="lang"/>
+          
           <specGrpRef target="#classmods"/>
           <specGrpRef target="#bodyfixes"/>
           <specGrpRef target="#hdrfixes"/>
-          <classSpec ident="att.canonical" type="atts" mode="delete"/>
+
           <classSpec ident="att.sortable" type="atts" mode="delete"/>
           <!-- Global attribute specifications -->
           <classSpec ident="att.global" module="tei" mode="change" type="atts">
@@ -388,6 +392,33 @@
           </elementSpec>
 
 
+
+          <elementSpec ident="funder" mode="change">
+            <classes mode="change">
+              <memberOf key="att.global" mode="delete"/>
+            </classes>
+          </elementSpec>
+          <elementSpec ident="respStmt" mode="change">
+            <classes mode="change">
+              <memberOf key="att.canonical" mode="delete"/>
+            </classes>
+          </elementSpec>
+          <elementSpec ident="resp" mode="change">
+            <classes mode="change">
+              <memberOf key="att.canonical" mode="delete"/>
+            </classes>
+          </elementSpec>
+          <elementSpec ident="publisher" mode="change">
+            <classes mode="change">
+              <memberOf key="att.canonical" mode="delete"/>
+            </classes>
+          </elementSpec>
+          <elementSpec ident="date" mode="change">
+            <classes mode="change">
+              <memberOf key="att.canonical" mode="delete"/>
+            </classes>
+          </elementSpec>
+          <classSpec ident="att.cReferencing" type="atts" mode="delete"/>
         </schemaSpec>
       </div>
     </body>
