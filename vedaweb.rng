@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-12-10T19:32:20Z. .
+Schema generated from ODD source 2020-12-14T14:06:43Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -35,6 +35,15 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
          </choice>
       </zeroOrMore>
    </define>
+   <define name="vedaweb_macro.phraseSeq.limited">
+      <zeroOrMore>
+         <choice>
+            <text/>
+            <ref name="vedaweb_model.limitedPhrase"/>
+            <ref name="vedaweb_model.global"/>
+         </choice>
+      </zeroOrMore>
+   </define>
    <define name="vedaweb_macro.specialPara">
       <zeroOrMore>
          <choice>
@@ -55,6 +64,182 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
          </choice>
       </zeroOrMore>
    </define>
+   <define name="vedaweb_att.canonical.attributes">
+      <ref name="vedaweb_att.canonical.attribute.key"/>
+      <ref name="vedaweb_att.canonical.attribute.ref"/>
+   </define>
+   <define name="vedaweb_att.canonical.attribute.key">
+      <optional>
+         <attribute name="key">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.canonical.attribute.ref">
+      <optional>
+         <attribute name="ref">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI"/>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.ranging.attributes">
+      <ref name="vedaweb_att.ranging.attribute.atLeast"/>
+      <ref name="vedaweb_att.ranging.attribute.atMost"/>
+      <ref name="vedaweb_att.ranging.attribute.min"/>
+      <ref name="vedaweb_att.ranging.attribute.max"/>
+      <ref name="vedaweb_att.ranging.attribute.confidence"/>
+   </define>
+   <define name="vedaweb_att.ranging.attribute.atLeast">
+      <optional>
+         <attribute name="atLeast">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a minimum estimated value for the approximate measurement.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.ranging.attribute.atMost">
+      <optional>
+         <attribute name="atMost">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a maximum estimated value for the approximate measurement.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.ranging.attribute.min">
+      <optional>
+         <attribute name="min">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the minimum value observed.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.ranging.attribute.max">
+      <optional>
+         <attribute name="max">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation or a range, supplies the maximum value observed.</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.ranging.attribute.confidence">
+      <optional>
+         <attribute name="confidence">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the degree of statistical confidence (between zero and one) that a value falls within the range specified by min and max, or the proportion of observed values that fall within that range.</a:documentation>
+            <data type="double"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.dimensions.attributes">
+      <ref name="vedaweb_att.ranging.attributes"/>
+      <ref name="vedaweb_att.dimensions.attribute.unit"/>
+      <ref name="vedaweb_att.dimensions.attribute.quantity"/>
+      <ref name="vedaweb_att.dimensions.attribute.extent"/>
+      <ref name="vedaweb_att.dimensions.attribute.precision"/>
+      <ref name="vedaweb_att.dimensions.attribute.scope"/>
+   </define>
+   <define name="vedaweb_att.dimensions.attribute.unit">
+      <optional>
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the unit used for the measurement
+Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inches) ; 4] lines; 5] chars (characters) </a:documentation>
+            <choice>
+               <value>cm</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(centimetres) </a:documentation>
+               <value>mm</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(millimetres) </a:documentation>
+               <value>in</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(inches) </a:documentation>
+               <value>lines</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">lines of text</a:documentation>
+               <value>chars</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(characters) characters of text</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.dimensions.attribute.quantity">
+      <optional>
+         <attribute name="quantity">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the length in the units specified</a:documentation>
+            <choice>
+               <data type="double"/>
+               <data type="token">
+                  <param name="pattern">(\-?[\d]+/\-?[\d]+)</param>
+               </data>
+               <data type="decimal"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.dimensions.attribute.extent">
+      <optional>
+         <attribute name="extent">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.dimensions.attribute.precision">
+      <optional>
+         <attribute name="precision">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the precision of the values specified by the other attributes.</a:documentation>
+            <choice>
+               <value>high</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>medium</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>low</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>unknown</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.dimensions.attribute.scope">
+      <optional>
+         <attribute name="scope">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">where the measurement summarizes more than one observation, specifies the applicability of this measurement.
+Sample values include: 1] all; 2] most; 3] range</a:documentation>
+            <data type="token">
+               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
    <define name="vedaweb_att.written.attributes">
       <ref name="vedaweb_att.written.attribute.hand"/>
    </define>
@@ -63,17 +248,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
          <attribute name="hand">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a handNote element describing the hand considered responsible for the content of the element concerned.</a:documentation>
             <data type="anyURI"/>
-         </attribute>
-      </optional>
-   </define>
-   <define name="vedaweb_att.cReferencing.attributes">
-      <ref name="vedaweb_att.cReferencing.attribute.cRef"/>
-   </define>
-   <define name="vedaweb_att.cReferencing.attribute.cRef">
-      <optional>
-         <attribute name="cRef">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a refsDecl element in the TEI header</a:documentation>
-            <data type="string"/>
          </attribute>
       </optional>
    </define>
@@ -198,6 +372,8 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
    </pattern>
    <define name="vedaweb_att.datable.attributes">
       <ref name="vedaweb_att.datable.w3c.attributes"/>
+      <ref name="vedaweb_att.datable.iso.attributes"/>
+      <ref name="vedaweb_att.datable.custom.attributes"/>
       <ref name="vedaweb_att.datable.attribute.calendar"/>
       <ref name="vedaweb_att.datable.attribute.period"/>
    </define>
@@ -354,6 +530,22 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
+   <define name="vedaweb_att.docStatus.attributes">
+      <ref name="vedaweb_att.docStatus.attribute.status"/>
+   </define>
+   <define name="vedaweb_att.docStatus.attribute.status">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="status"
+                    a:defaultValue="draft">
+            <a:documentation>describes the status of a document either currently or, when associated with a dated element, at the time indicated.
+Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] draft; 6] embargoed; 7] expired; 8] frozen; 9] galley; 10] proposed; 11] published; 12] recommendation; 13] submitted; 14] unfinished; 15] withdrawn</a:documentation>
+            <data type="token">
+               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
    <define name="vedaweb_att.global.responsibility.attributes">
       <ref name="vedaweb_att.global.responsibility.attribute.cert"/>
       <ref name="vedaweb_att.global.responsibility.attribute.resp"/>
@@ -387,6 +579,51 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                   <data type="anyURI"/>
                </oneOrMore>
             </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.editLike.attributes">
+      <ref name="vedaweb_att.editLike.attribute.evidence"/>
+      <ref name="vedaweb_att.editLike.attribute.instant"/>
+   </define>
+   <define name="vedaweb_att.editLike.attribute.evidence">
+      <optional>
+         <attribute name="evidence">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
+Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentation>
+            <list>
+               <oneOrMore>
+                  <choice>
+                     <value>internal</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is internal evidence to support the intervention.</a:documentation>
+                     <value>external</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is external evidence to support the intervention.</a:documentation>
+                     <value>conjecture</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.</a:documentation>
+                     <data type="token">
+                        <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                     </data>
+                  </choice>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.editLike.attribute.instant">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="instant"
+                    a:defaultValue="false">
+            <a:documentation>indicates whether this is an instant revision or not.</a:documentation>
+            <choice>
+               <data type="boolean"/>
+               <choice>
+                  <value>unknown</value>
+                  <a:documentation/>
+                  <value>inapplicable</value>
+                  <a:documentation/>
+               </choice>
+            </choice>
          </attribute>
       </optional>
    </define>
@@ -531,6 +768,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
       </optional>
    </define>
    <define name="vedaweb_att.naming.attributes">
+      <ref name="vedaweb_att.canonical.attributes"/>
       <ref name="vedaweb_att.naming.attribute.role"/>
       <ref name="vedaweb_att.naming.attribute.nymRef"/>
    </define>
@@ -716,23 +954,111 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </attribute>
       </optional>
    </define>
+   <define name="vedaweb_att.citing.attributes">
+      <ref name="vedaweb_att.citing.attribute.unit"/>
+      <ref name="vedaweb_att.citing.attribute.from"/>
+      <ref name="vedaweb_att.citing.attribute.to"/>
+   </define>
+   <define name="vedaweb_att.citing.attribute.unit">
+      <optional>
+         <attribute name="unit">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the unit of information conveyed by the element, e.g. columns, pages, volume, entry.
+Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] part; 7] column; 8] entry</a:documentation>
+            <choice>
+               <value>volume</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains a volume number.</a:documentation>
+               <value>issue</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains an issue number, or volume and issue numbers.</a:documentation>
+               <value>page</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains a page number or page range.</a:documentation>
+               <value>line</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains a line number or line range.</a:documentation>
+               <value>chapter</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element contains a chapter indication (number and/or title)</a:documentation>
+               <value>part</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies a part of a book or collection.</a:documentation>
+               <value>column</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies a column.</a:documentation>
+               <value>entry</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the element identifies an entry number or label in a list of entries.</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.citing.attribute.from">
+      <optional>
+         <attribute name="from">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the starting point of the range of units indicated by the unit attribute.</a:documentation>
+            <data type="token">
+               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.citing.attribute.to">
+      <optional>
+         <attribute name="to">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the end-point of the range of units indicated by the unit attribute.</a:documentation>
+            <data type="token">
+               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
    <define name="vedaweb_model.nameLike.agent">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_name"/>
+         <ref name="vedaweb_orgName"/>
+         <ref name="vedaweb_persName"/>
+      </choice>
    </define>
    <define name="vedaweb_model.nameLike.agent_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_name"/>
+         <ref name="vedaweb_orgName"/>
+         <ref name="vedaweb_persName"/>
+      </choice>
    </define>
    <define name="vedaweb_model.nameLike.agent_sequence">
-      <empty/>
+      <ref name="vedaweb_name"/>
+      <ref name="vedaweb_orgName"/>
+      <ref name="vedaweb_persName"/>
    </define>
    <define name="vedaweb_model.nameLike.agent_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="vedaweb_name"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_orgName"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_persName"/>
+      </optional>
    </define>
    <define name="vedaweb_model.nameLike.agent_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="vedaweb_name"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_orgName"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_persName"/>
+      </zeroOrMore>
    </define>
    <define name="vedaweb_model.nameLike.agent_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="vedaweb_name"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_orgName"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_persName"/>
+      </oneOrMore>
    </define>
    <define name="vedaweb_model.segLike">
       <choice>
@@ -792,22 +1118,32 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </choice>
    </define>
    <define name="vedaweb_model.dateLike">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_date"/>
+      </choice>
    </define>
    <define name="vedaweb_model.dateLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_date"/>
+      </choice>
    </define>
    <define name="vedaweb_model.dateLike_sequence">
-      <empty/>
+      <ref name="vedaweb_date"/>
    </define>
    <define name="vedaweb_model.dateLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="vedaweb_date"/>
+      </optional>
    </define>
    <define name="vedaweb_model.dateLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="vedaweb_date"/>
+      </zeroOrMore>
    </define>
    <define name="vedaweb_model.dateLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="vedaweb_date"/>
+      </oneOrMore>
    </define>
    <define name="vedaweb_model.measureLike">
       <notAllowed/>
@@ -870,22 +1206,32 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <notAllowed/>
    </define>
    <define name="vedaweb_model.pPart.editorial">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_abbr"/>
+      </choice>
    </define>
    <define name="vedaweb_model.pPart.editorial_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_abbr"/>
+      </choice>
    </define>
    <define name="vedaweb_model.pPart.editorial_sequence">
-      <empty/>
+      <ref name="vedaweb_abbr"/>
    </define>
    <define name="vedaweb_model.pPart.editorial_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="vedaweb_abbr"/>
+      </optional>
    </define>
    <define name="vedaweb_model.pPart.editorial_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="vedaweb_abbr"/>
+      </zeroOrMore>
    </define>
    <define name="vedaweb_model.pPart.editorial_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="vedaweb_abbr"/>
+      </oneOrMore>
    </define>
    <define name="vedaweb_model.pPart.transcriptional">
       <notAllowed/>
@@ -955,22 +1301,68 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <notAllowed/>
    </define>
    <define name="vedaweb_model.biblLike">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_bibl"/>
+         <ref name="vedaweb_biblStruct"/>
+         <ref name="vedaweb_listBibl"/>
+         <ref name="vedaweb_biblFull"/>
+      </choice>
    </define>
    <define name="vedaweb_model.biblLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_bibl"/>
+         <ref name="vedaweb_biblStruct"/>
+         <ref name="vedaweb_listBibl"/>
+         <ref name="vedaweb_biblFull"/>
+      </choice>
    </define>
    <define name="vedaweb_model.biblLike_sequence">
-      <empty/>
+      <ref name="vedaweb_bibl"/>
+      <ref name="vedaweb_biblStruct"/>
+      <ref name="vedaweb_listBibl"/>
+      <ref name="vedaweb_biblFull"/>
    </define>
    <define name="vedaweb_model.biblLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="vedaweb_bibl"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_biblStruct"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_listBibl"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_biblFull"/>
+      </optional>
    </define>
    <define name="vedaweb_model.biblLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="vedaweb_bibl"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_biblStruct"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_listBibl"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_biblFull"/>
+      </zeroOrMore>
    </define>
    <define name="vedaweb_model.biblLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="vedaweb_bibl"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_biblStruct"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_listBibl"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_biblFull"/>
+      </oneOrMore>
    </define>
    <define name="vedaweb_model.headLike">
       <choice>
@@ -1135,6 +1527,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="vedaweb_vAlt"/>
       </choice>
    </define>
+   <define name="vedaweb_model.eventLike">
+      <notAllowed/>
+   </define>
    <define name="vedaweb_model.global.edit">
       <notAllowed/>
    </define>
@@ -1143,6 +1538,12 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="vedaweb_model.lLike"/>
          <ref name="vedaweb_model.pLike"/>
          <ref name="vedaweb_lg"/>
+      </choice>
+   </define>
+   <define name="vedaweb_model.persStateLike">
+      <choice>
+         <ref name="vedaweb_persName"/>
+         <ref name="vedaweb_affiliation"/>
       </choice>
    </define>
    <define name="vedaweb_model.placeNamePart">
@@ -1192,11 +1593,21 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </oneOrMore>
    </define>
    <define name="vedaweb_model.publicationStmtPart.agency">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_publisher"/>
+      </choice>
    </define>
    <define name="vedaweb_model.publicationStmtPart.detail">
       <choice>
          <ref name="vedaweb_model.ptrLike"/>
+         <ref name="vedaweb_date"/>
+         <ref name="vedaweb_pubPlace"/>
+         <ref name="vedaweb_availability"/>
+      </choice>
+   </define>
+   <define name="vedaweb_model.availabilityPart">
+      <choice>
+         <ref name="vedaweb_licence"/>
       </choice>
    </define>
    <define name="vedaweb_model.quoteLike">
@@ -1248,6 +1659,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
    <define name="vedaweb_model.respLike">
       <choice>
          <ref name="vedaweb_author"/>
+         <ref name="vedaweb_editor"/>
+         <ref name="vedaweb_respStmt"/>
+         <ref name="vedaweb_funder"/>
       </choice>
    </define>
    <define name="vedaweb_model.divWrapper">
@@ -1281,29 +1695,60 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="vedaweb_model.divBottomPart"/>
       </choice>
    </define>
+   <define name="vedaweb_model.imprintPart">
+      <choice>
+         <ref name="vedaweb_publisher"/>
+         <ref name="vedaweb_biblScope"/>
+         <ref name="vedaweb_pubPlace"/>
+      </choice>
+   </define>
    <define name="vedaweb_model.addressLike">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_email"/>
+         <ref name="vedaweb_affiliation"/>
+      </choice>
    </define>
    <define name="vedaweb_model.addressLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_email"/>
+         <ref name="vedaweb_affiliation"/>
+      </choice>
    </define>
    <define name="vedaweb_model.addressLike_sequence">
-      <empty/>
+      <ref name="vedaweb_email"/>
+      <ref name="vedaweb_affiliation"/>
    </define>
    <define name="vedaweb_model.addressLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="vedaweb_email"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_affiliation"/>
+      </optional>
    </define>
    <define name="vedaweb_model.addressLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="vedaweb_email"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_affiliation"/>
+      </zeroOrMore>
    </define>
    <define name="vedaweb_model.addressLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="vedaweb_email"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_affiliation"/>
+      </oneOrMore>
    </define>
    <define name="vedaweb_model.nameLike">
       <choice>
          <ref name="vedaweb_model.nameLike.agent"/>
          <ref name="vedaweb_model.offsetLike"/>
          <ref name="vedaweb_model.placeStateLike"/>
+         <ref name="vedaweb_model.persNamePart"/>
+         <ref name="vedaweb_lang"/>
       </choice>
    </define>
    <define name="vedaweb_model.nameLike_alternation">
@@ -1311,12 +1756,16 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="vedaweb_model.nameLike.agent_alternation"/>
          <ref name="vedaweb_model.offsetLike_alternation"/>
          <ref name="vedaweb_model.placeStateLike_alternation"/>
+         <ref name="vedaweb_model.persNamePart_alternation"/>
+         <ref name="vedaweb_lang"/>
       </choice>
    </define>
    <define name="vedaweb_model.nameLike_sequence">
       <ref name="vedaweb_model.nameLike.agent_sequence"/>
       <ref name="vedaweb_model.offsetLike_sequence"/>
       <ref name="vedaweb_model.placeStateLike_sequence"/>
+      <ref name="vedaweb_model.persNamePart_sequence"/>
+      <ref name="vedaweb_lang"/>
    </define>
    <define name="vedaweb_model.nameLike_sequenceOptional">
       <optional>
@@ -1327,6 +1776,12 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </optional>
       <optional>
          <ref name="vedaweb_model.placeStateLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_model.persNamePart_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_lang"/>
       </optional>
    </define>
    <define name="vedaweb_model.nameLike_sequenceOptionalRepeatable">
@@ -1339,6 +1794,12 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <zeroOrMore>
          <ref name="vedaweb_model.placeStateLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_model.persNamePart_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="vedaweb_lang"/>
+      </zeroOrMore>
    </define>
    <define name="vedaweb_model.nameLike_sequenceRepeatable">
       <oneOrMore>
@@ -1349,6 +1810,12 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </oneOrMore>
       <oneOrMore>
          <ref name="vedaweb_model.placeStateLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_model.persNamePart_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_lang"/>
       </oneOrMore>
    </define>
    <define name="vedaweb_model.global">
@@ -1365,9 +1832,20 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="vedaweb_model.featureVal.single"/>
       </choice>
    </define>
+   <define name="vedaweb_model.biblPart">
+      <choice>
+         <ref name="vedaweb_model.respLike"/>
+         <ref name="vedaweb_model.imprintPart"/>
+         <ref name="vedaweb_bibl"/>
+         <ref name="vedaweb_relatedItem"/>
+         <ref name="vedaweb_edition"/>
+         <ref name="vedaweb_availability"/>
+      </choice>
+   </define>
    <define name="vedaweb_model.frontPart">
       <choice>
          <ref name="vedaweb_model.frontPart.drama"/>
+         <ref name="vedaweb_listBibl"/>
       </choice>
    </define>
    <define name="vedaweb_model.pPart.data">
@@ -1393,6 +1871,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <choice>
          <ref name="vedaweb_model.divPart"/>
          <ref name="vedaweb_model.inter"/>
+         <ref name="vedaweb_model.entryLike"/>
       </choice>
    </define>
    <define name="vedaweb_model.phrase">
@@ -1406,6 +1885,18 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="vedaweb_model.lPart"/>
          <ref name="vedaweb_model.phrase.xml"/>
          <ref name="vedaweb_model.specDescLike"/>
+         <ref name="vedaweb_model.pPart.data"/>
+         <ref name="vedaweb_model.ptrLike.form"/>
+      </choice>
+   </define>
+   <define name="vedaweb_model.limitedPhrase">
+      <choice>
+         <ref name="vedaweb_model.hiLike"/>
+         <ref name="vedaweb_model.emphLike"/>
+         <ref name="vedaweb_model.pPart.msdesc"/>
+         <ref name="vedaweb_model.pPart.editorial"/>
+         <ref name="vedaweb_model.ptrLike"/>
+         <ref name="vedaweb_model.phrase.xml"/>
          <ref name="vedaweb_model.pPart.data"/>
       </choice>
    </define>
@@ -1421,15 +1912,53 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <notAllowed/>
    </define>
    <define name="vedaweb_model.teiHeaderPart">
-      <notAllowed/>
+      <choice>
+         <ref name="vedaweb_profileDesc"/>
+      </choice>
    </define>
    <define name="vedaweb_model.sourceDescPart">
       <notAllowed/>
+   </define>
+   <define name="vedaweb_model.profileDescPart">
+      <choice>
+         <ref name="vedaweb_abstract"/>
+         <ref name="vedaweb_langUsage"/>
+      </choice>
    </define>
    <define name="vedaweb_model.resourceLike">
       <choice>
          <ref name="vedaweb_text"/>
       </choice>
+   </define>
+   <define name="vedaweb_att.personal.attributes">
+      <ref name="vedaweb_att.naming.attributes"/>
+      <ref name="vedaweb_att.personal.attribute.full"/>
+      <ref name="vedaweb_att.personal.attribute.sort"/>
+   </define>
+   <define name="vedaweb_att.personal.attribute.full">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="full"
+                    a:defaultValue="yes">
+            <a:documentation>indicates whether the name component is given in full, as an abbreviation or simply as an initial.</a:documentation>
+            <choice>
+               <value>yes</value>
+               <a:documentation>the name component is spelled out in full.</a:documentation>
+               <value>abb</value>
+               <a:documentation>(abbreviated) the name component is given in an abbreviated form.</a:documentation>
+               <value>init</value>
+               <a:documentation>(initial letter) the name component is indicated only by one initial.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.personal.attribute.sort">
+      <optional>
+         <attribute name="sort">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the sort order of the name component in relation to others within the name.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
    </define>
    <define name="vedaweb_p">
       <element name="p">
@@ -1458,6 +1987,63 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_name">
+      <element name="name">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name, proper noun) contains a proper noun or noun phrase. [3.5.1. Referring Strings]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.personal.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <ref name="vedaweb_att.editLike.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_email">
+      <element name="email">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(electronic mail address) contains an email address identifying a location to which email messages can be delivered. [3.5.2. Addresses]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_date">
+      <element name="date">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.7. Dates and Times]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="vedaweb_model.gLike"/>
+               <ref name="vedaweb_model.phrase"/>
+               <ref name="vedaweb_model.global"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <ref name="vedaweb_att.editLike.attributes"/>
+         <ref name="vedaweb_att.dimensions.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_abbr">
+      <element name="abbr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(abbreviation) contains an abbreviation of any sort. [3.5.5. Abbreviations and Their Expansions]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">allows the encoder to classify the abbreviation according to some convenient typology.
+Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscription; 5] acronym; 6] title; 7] organization; 8] geographic</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_ptr">
       <element name="ptr">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pointer) defines a pointer to another location. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
@@ -1474,7 +2060,6 @@ attributes @target and @cRef may be supplied on <name/>.</report>
          <ref name="vedaweb_att.internetMedia.attributes"/>
          <ref name="vedaweb_att.typed.attributes"/>
          <ref name="vedaweb_att.declaring.attributes"/>
-         <ref name="vedaweb_att.cReferencing.attributes"/>
          <empty/>
       </element>
    </define>
@@ -1608,6 +2193,115 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_monogr">
+      <element name="monogr">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.11.2.1. Analytic, Monographic, and Series Levels]</a:documentation>
+         <group>
+      
+            <optional>
+               <choice>
+                  <group>
+                     <choice>
+                        <ref name="vedaweb_author"/>
+                        <ref name="vedaweb_editor"/>
+              
+                        <ref name="vedaweb_respStmt"/>
+                     </choice>
+            
+                     <zeroOrMore>
+                        <choice>
+                           <ref name="vedaweb_author"/>
+                           <ref name="vedaweb_editor"/>
+                
+                           <ref name="vedaweb_respStmt"/>
+                        </choice>
+                     </zeroOrMore>
+            
+            
+                     <oneOrMore>
+                        <ref name="vedaweb_title"/>
+                     </oneOrMore>
+            
+            
+                     <zeroOrMore>
+                        <choice>
+                           <ref name="vedaweb_model.ptrLike"/>
+                
+                
+                           <ref name="vedaweb_editor"/>
+                           <ref name="vedaweb_respStmt"/>
+                        </choice>
+                     </zeroOrMore>
+            
+                  </group>
+                  <group>
+            
+                     <oneOrMore>
+                        <choice>
+                           <ref name="vedaweb_title"/>
+                           <ref name="vedaweb_model.ptrLike"/>
+                
+                        </choice>
+                     </oneOrMore>
+            
+            
+                     <zeroOrMore>
+                        <choice>
+                
+                           <ref name="vedaweb_author"/>
+                           <ref name="vedaweb_editor"/>
+                
+                           <ref name="vedaweb_respStmt"/>
+                        </choice>
+                     </zeroOrMore>
+            
+                  </group>
+                  <empty/>
+               </choice>
+            </optional>
+      
+      
+            <zeroOrMore>
+               <ref name="vedaweb_availability"/>
+            </zeroOrMore>
+      
+      
+            <zeroOrMore>
+               <ref name="vedaweb_model.noteLike"/>
+            </zeroOrMore>
+      
+            <zeroOrMore>
+               <group>
+                  <ref name="vedaweb_edition"/>
+        
+                  <zeroOrMore>
+                     <choice>
+            
+                        <ref name="vedaweb_model.ptrLike"/>
+                        <ref name="vedaweb_editor"/>
+            
+                        <ref name="vedaweb_funder"/>
+                        <ref name="vedaweb_respStmt"/>
+                     </choice>
+                  </zeroOrMore>
+        
+               </group>
+            </zeroOrMore>
+            <ref name="vedaweb_imprint"/>
+      
+            <zeroOrMore>
+               <choice>
+                  <ref name="vedaweb_imprint"/>
+          
+                  <ref name="vedaweb_biblScope"/>
+               </choice>
+            </zeroOrMore>
+      
+         </group>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_author">
       <element name="author">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
@@ -1617,11 +2311,57 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_editor">
+      <element name="editor">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc. [3.11.2.2. Titles, Authors, and Editors]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.naming.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_respStmt">
+      <element name="respStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
+         <group>
+            <choice>
+               <group>
+                  <oneOrMore>
+                     <ref name="vedaweb_resp"/>
+                  </oneOrMore>
+                  <oneOrMore>
+                     <ref name="vedaweb_model.nameLike.agent"/>
+                  </oneOrMore>
+               </group>
+               <group>
+                  <oneOrMore>
+                     <ref name="vedaweb_model.nameLike.agent"/>
+                  </oneOrMore>
+                  <oneOrMore>
+                     <ref name="vedaweb_resp"/>
+                  </oneOrMore>
+               </group>
+            </choice>
+         </group>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_resp">
+      <element name="resp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq.limited"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_title">
       <element name="title">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="vedaweb_macro.paraContent"/>
          <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.canonical.attributes"/>
          <ref name="vedaweb_att.typed.attribute.subtype"/>
          <ref name="vedaweb_att.datable.attributes"/>
          <optional>
@@ -1653,6 +2393,190 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_imprint">
+      <element name="imprint">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups information relating to the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
+         <group>
+      
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+      
+            <oneOrMore>
+               <group>
+                  <choice>
+          
+            
+                     <ref name="vedaweb_model.imprintPart"/>
+          
+          
+            
+                     <ref name="vedaweb_model.dateLike"/>
+          
+                  </choice>
+        
+                  <zeroOrMore>
+                     <ref name="vedaweb_respStmt"/>
+                  </zeroOrMore>
+        
+        
+                  <zeroOrMore>
+                     <ref name="vedaweb_model.global"/>
+                  </zeroOrMore>
+        
+               </group>
+            </oneOrMore>
+         </group>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_publisher">
+      <element name="publisher">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_biblScope">
+      <element name="biblScope">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(scope of bibliographic reference) defines the scope of a bibliographic reference, for example as a list of page numbers, or a named subdivision of a larger work. [3.11.2.5. Scopes and Ranges in Bibliographic Citations]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.citing.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_pubPlace">
+      <element name="pubPlace">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.naming.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_bibl">
+      <element name="bibl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="vedaweb_model.gLike"/>
+               <ref name="vedaweb_model.highlighted"/>
+               <ref name="vedaweb_model.pPart.data"/>
+               <ref name="vedaweb_model.pPart.edit"/>
+               <ref name="vedaweb_model.segLike"/>
+               <ref name="vedaweb_model.ptrLike"/>
+               <ref name="vedaweb_model.biblPart"/>
+               <ref name="vedaweb_model.global"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.declarable.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <ref name="vedaweb_att.docStatus.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_biblStruct">
+      <element name="biblStruct">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(structured bibliographic citation) contains a structured bibliographic citation, in which only bibliographic sub-elements appear and in a specified order. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
+         <group>
+            
+            <oneOrMore>
+               <group>
+                  <ref name="vedaweb_monogr"/>
+        
+               </group>
+            </oneOrMore>
+            <zeroOrMore>
+               <choice>
+                  <ref name="vedaweb_model.noteLike"/>
+                  <ref name="vedaweb_model.ptrLike"/>
+                  <ref name="vedaweb_relatedItem"/>
+        
+               </choice>
+            </zeroOrMore>
+         </group>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.declarable.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <ref name="vedaweb_att.docStatus.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_listBibl">
+      <element name="listBibl">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(citation list) contains a list of bibliographic citations of any kind. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
+         <group>
+      
+            <zeroOrMore>
+               <ref name="vedaweb_model.headLike"/>
+            </zeroOrMore>
+      
+      
+            <oneOrMore>
+               <choice>
+                  <ref name="vedaweb_model.biblLike"/>
+                  <ref name="vedaweb_model.milestoneLike"/>
+               </choice>
+            </oneOrMore>
+      
+      
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+      
+         </group>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.declarable.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_relatedItem">
+      <element name="relatedItem">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains or references some other bibliographic item which is related to the present one in some specified manner, for example as a constituent or alternative version of it. [3.11.2.7. Related Items]</a:documentation>
+         <optional>
+            <choice>
+               <ref name="vedaweb_model.biblLike"/>
+               <ref name="vedaweb_model.ptrLike"/>
+            </choice>
+         </optional>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="vedaweb-relatedItem-targetorcontent1-constraint-report-7">
+            <rule context="tei:relatedItem">
+               <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns="http://www.tei-c.org/ns/1.0"
+                           test="@target and count( child::* ) &gt; 0">
+If the @target attribute on <sch:name/> is used, the
+relatedItem element must be empty</sch:report>
+            </rule>
+         </pattern>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="vedaweb-relatedItem-targetorcontent1-constraint-assert-5">
+            <rule context="tei:relatedItem">
+               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns="http://www.tei-c.org/ns/1.0"
+                           test="@target or child::*">A relatedItem element should have either a 'target' attribute
+        or a child element to indicate the related bibliographic item</sch:assert>
+            </rule>
+         </pattern>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <optional>
+            <attribute name="target">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the related bibliographic element by means of an absolute or relative URI reference</a:documentation>
+               <data type="anyURI"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_l">
       <element name="l">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.12.1. Core Tags for Verse 3.12. Passages of Verse or Drama 7.2.5. Speech Contents]</a:documentation>
@@ -1666,7 +2590,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-l-abstractModel-structure-l-constraint-report-7">
+                  id="vedaweb-l-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:l">
                <report test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
@@ -1713,7 +2637,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-lg-atleast1oflggapl-constraint-assert-5">
+                  id="vedaweb-lg-atleast1oflggapl-constraint-assert-6">
             <rule context="tei:lg">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -1722,7 +2646,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-lg-abstractModel-structure-l-constraint-report-8">
+                  id="vedaweb-lg-abstractModel-structure-l-constraint-report-9">
             <rule context="tei:lg">
                <report test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
         Abstract model violation: Lines may not contain line groups.
@@ -1784,6 +2708,50 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
                      </choice>
                   </oneOrMore>
                </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_teiCorpus">
+      <element name="teiCorpus">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the whole of a TEI encoded corpus, comprising a single corpus header and one or more TEI elements, each containing a single text header and a text. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
+         <group>
+            <ref name="vedaweb_teiHeader"/>
+            <choice>
+               <group>
+          
+                  <oneOrMore>
+                     <ref name="vedaweb_model.resourceLike"/>
+                  </oneOrMore>
+          
+          
+                  <zeroOrMore>
+                     <choice>
+                        <ref name="vedaweb_TEI"/>
+                        <ref name="vedaweb_teiCorpus"/>
+                     </choice>
+                  </zeroOrMore>
+          
+               </group>
+        
+               <oneOrMore>
+                  <choice>
+                     <ref name="vedaweb_TEI"/>
+                     <ref name="vedaweb_teiCorpus"/>
+                  </choice>
+               </oneOrMore>
+        
+            </choice>
+         </group>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <optional>
+            <attribute name="version">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the version number of the TEI Guidelines against which this document is valid.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[\d]+(\.[\d]+){0,2}</param>
+               </data>
             </attribute>
          </optional>
          <empty/>
@@ -2174,14 +3142,18 @@ Feature Value]</a:documentation>
             <group>
                <ref name="vedaweb_titleStmt"/>
         
-          
+               <optional>
+                  <ref name="vedaweb_editionStmt"/>
+               </optional>
         
         
           
         
                <ref name="vedaweb_publicationStmt"/>
         
-          
+               <optional>
+                  <ref name="vedaweb_seriesStmt"/>
+               </optional>
         
         
           
@@ -2216,6 +3188,44 @@ Feature Value]</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_funder">
+      <element name="funder">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(funding body) specifies the name of an individual, institution, or organization responsible for the funding of a project or text. [2.2.1. The Title Statement]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq.limited"/>
+         <ref name="vedaweb_att.canonical.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_editionStmt">
+      <element name="editionStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition statement) groups information relating to one edition of a text. [2.2.2. The Edition Statement 2.2. The File Description]</a:documentation>
+         <choice>
+      
+            <oneOrMore>
+               <ref name="vedaweb_model.pLike"/>
+            </oneOrMore>
+      
+            <group>
+               <ref name="vedaweb_edition"/>
+        
+               <zeroOrMore>
+                  <ref name="vedaweb_model.respLike"/>
+               </zeroOrMore>
+        
+            </group>
+         </choice>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_edition">
+      <element name="edition">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the particularities of one edition of a text. [2.2.2. The Edition Statement]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_publicationStmt">
       <element name="publicationStmt">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication statement) groups information concerning the publication or distribution of an electronic or other text. [2.2.4. Publication, Distribution, Licensing, etc. 2.2. The File Description]</a:documentation>
@@ -2244,6 +3254,80 @@ Feature Value]</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_availability">
+      <element name="availability">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="vedaweb_model.availabilityPart"/>
+               <ref name="vedaweb_model.pLike"/>
+            </choice>
+         </oneOrMore>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.declarable.attributes"/>
+         <optional>
+            <attribute name="status">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a code identifying the current availability of the text.</a:documentation>
+               <choice>
+                  <value>free</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text is freely available.</a:documentation>
+                  <value>unknown</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the status of the text is unknown.</a:documentation>
+                  <value>restricted</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text is not freely available.</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_licence">
+      <element name="licence">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about a licence or other legal agreement applicable to the text. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
+         <ref name="vedaweb_macro.specialPara"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.pointing.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_seriesStmt">
+      <element name="seriesStmt">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(series statement) groups information about the series, if any, to which a publication belongs. [2.2.5. The Series Statement 2.2. The File Description]</a:documentation>
+         <choice>
+      
+            <oneOrMore>
+               <ref name="vedaweb_model.pLike"/>
+            </oneOrMore>
+      
+            <group>
+        
+               <oneOrMore>
+                  <ref name="vedaweb_title"/>
+               </oneOrMore>
+        
+        
+               <zeroOrMore>
+                  <choice>
+                     <ref name="vedaweb_editor"/>
+                     <ref name="vedaweb_respStmt"/>
+                  </choice>
+               </zeroOrMore>
+        
+        
+               <zeroOrMore>
+                  <choice>
+            
+                     <ref name="vedaweb_biblScope"/>
+                  </choice>
+               </zeroOrMore>
+        
+            </group>
+         </choice>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_sourceDesc">
       <element name="sourceDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(source description) describes the source from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]</a:documentation>
@@ -2265,6 +3349,105 @@ Feature Value]</a:documentation>
          </choice>
          <ref name="vedaweb_att.global.attributes"/>
          <ref name="vedaweb_att.declarable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_biblFull">
+      <element name="biblFull">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(fully-structured bibliographic citation) contains a fully-structured bibliographic citation, in which all components of the TEI file description are present. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2. The File Description 2.2.7. The Source Description 15.3.2. Declarable Elements]</a:documentation>
+         <choice>
+            <group>
+               <group>
+                  <ref name="vedaweb_titleStmt"/>
+                  <optional>
+                     <ref name="vedaweb_editionStmt"/>
+                  </optional>
+          
+                  <ref name="vedaweb_publicationStmt"/>
+                  <optional>
+                     <ref name="vedaweb_seriesStmt"/>
+                  </optional>
+          
+               </group>
+               <zeroOrMore>
+                  <ref name="vedaweb_sourceDesc"/>
+               </zeroOrMore>
+            </group>
+            <group>
+               <ref name="vedaweb_fileDesc"/>
+               <ref name="vedaweb_profileDesc"/>
+            </group>
+         </choice>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.declarable.attributes"/>
+         <ref name="vedaweb_att.docStatus.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_profileDesc">
+      <element name="profileDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the languages and sublanguages used, the situation in which it was produced, the participants and their setting. [2.4. The Profile Description 2.1.1. The TEI Header and Its Components]</a:documentation>
+         <zeroOrMore>
+            <ref name="vedaweb_model.profileDescPart"/>
+         </zeroOrMore>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_abstract">
+      <element name="abstract">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. Abstracts]</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="vedaweb_model.pLike"/>
+               <ref name="vedaweb_model.listLike"/>
+            </choice>
+         </oneOrMore>
+         <ref name="vedaweb_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_langUsage">
+      <element name="langUsage">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language usage) describes the languages, sublanguages, registers, dialects, etc. represented within a text. [2.4.2. Language Usage 2.4. The Profile Description 15.3.2. Declarable Elements]</a:documentation>
+         <choice>
+        
+            <oneOrMore>
+               <ref name="vedaweb_model.pLike"/>
+            </oneOrMore>
+         
+          
+            <oneOrMore>
+               <ref name="vedaweb_language"/>
+            </oneOrMore>
+        
+         </choice>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.declarable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_language">
+      <element name="language">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes a single language or sublanguage used within a text. [2.4.2. Language Usage]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq.limited"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <attribute name="ident">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) Supplies a language code constructed as defined in BCP 47 which is used to identify the language documented by this element, and which is referenced by the global xml:lang attribute.</a:documentation>
+            <choice>
+               <data type="language"/>
+               <choice>
+                  <value/>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </choice>
+         </attribute>
+         <optional>
+            <attribute name="usage">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the approximate percentage (by volume) of the text which uses this language.</a:documentation>
+               <data type="nonNegativeInteger"/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -2569,7 +3752,7 @@ Feature Value]</a:documentation>
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-div-abstractModel-structure-l-constraint-report-9">
+                  id="vedaweb-div-abstractModel-structure-l-constraint-report-10">
             <rule context="tei:div">
                <report test="ancestor::tei:l">
         Abstract model violation: Lines may not contain higher-level structural elements such as div.
@@ -2577,7 +3760,7 @@ Feature Value]</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="vedaweb-div-abstractModel-structure-p-constraint-report-10">
+                  id="vedaweb-div-abstractModel-structure-p-constraint-report-11">
             <rule context="tei:div">
                <report test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div.
@@ -2744,7 +3927,367 @@ Feature Value]</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_att.datable.custom.attributes">
+      <ref name="vedaweb_att.datable.custom.attribute.when-custom"/>
+      <ref name="vedaweb_att.datable.custom.attribute.notBefore-custom"/>
+      <ref name="vedaweb_att.datable.custom.attribute.notAfter-custom"/>
+      <ref name="vedaweb_att.datable.custom.attribute.from-custom"/>
+      <ref name="vedaweb_att.datable.custom.attribute.to-custom"/>
+      <ref name="vedaweb_att.datable.custom.attribute.datingPoint"/>
+      <ref name="vedaweb_att.datable.custom.attribute.datingMethod"/>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.when-custom">
+      <optional>
+         <attribute name="when-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.notBefore-custom">
+      <optional>
+         <attribute name="notBefore-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.notAfter-custom">
+      <optional>
+         <attribute name="notAfter-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.from-custom">
+      <optional>
+         <attribute name="from-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.to-custom">
+      <optional>
+         <attribute name="to-custom">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in some custom standard form.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.datingPoint">
+      <optional>
+         <attribute name="datingPoint">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to some location defining a named point in time with reference to which the datable item is understood to have occurred</a:documentation>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.custom.attribute.datingMethod">
+      <optional>
+         <attribute name="datingMethod">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.</a:documentation>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_model.persNamePart">
+      <notAllowed/>
+   </define>
+   <define name="vedaweb_model.persNamePart_alternation">
+      <notAllowed/>
+   </define>
+   <define name="vedaweb_model.persNamePart_sequence">
+      <empty/>
+   </define>
+   <define name="vedaweb_model.persNamePart_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="vedaweb_model.persNamePart_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="vedaweb_model.persNamePart_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="vedaweb_att.datable.iso.attributes">
+      <ref name="vedaweb_att.datable.iso.attribute.when-iso"/>
+      <ref name="vedaweb_att.datable.iso.attribute.notBefore-iso"/>
+      <ref name="vedaweb_att.datable.iso.attribute.notAfter-iso"/>
+      <ref name="vedaweb_att.datable.iso.attribute.from-iso"/>
+      <ref name="vedaweb_att.datable.iso.attribute.to-iso"/>
+   </define>
+   <define name="vedaweb_att.datable.iso.attribute.when-iso">
+      <optional>
+         <attribute name="when-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies the value of a date or time in a standard form.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.iso.attribute.notBefore-iso">
+      <optional>
+         <attribute name="notBefore-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.iso.attribute.notAfter-iso">
+      <optional>
+         <attribute name="notAfter-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.iso.attribute.from-iso">
+      <optional>
+         <attribute name="from-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the starting point of the period in standard form.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.datable.iso.attribute.to-iso">
+      <optional>
+         <attribute name="to-iso">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the ending point of the period in standard form.</a:documentation>
+            <choice>
+               <data type="date"/>
+               <data type="gYear"/>
+               <data type="gMonth"/>
+               <data type="gDay"/>
+               <data type="gYearMonth"/>
+               <data type="gMonthDay"/>
+               <data type="time"/>
+               <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_orgName">
+      <element name="orgName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. Organizational Names]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <ref name="vedaweb_att.editLike.attributes"/>
+         <ref name="vedaweb_att.personal.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_persName">
+      <element name="persName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. Personal Names]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <ref name="vedaweb_att.editLike.attributes"/>
+         <ref name="vedaweb_att.personal.attributes"/>
+         <ref name="vedaweb_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_affiliation">
+      <element name="affiliation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an informal description of a person's present or past affiliation with some organization, for example an employer or sponsor. [15.2.2. The Participant Description]</a:documentation>
+         <ref name="vedaweb_macro.phraseSeq"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.editLike.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <ref name="vedaweb_att.naming.attributes"/>
+         <ref name="vedaweb_att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.
+Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="vedaweb_model.entryLike">
+      <notAllowed/>
+   </define>
+   <define name="vedaweb_att.lexicographic.attributes">
+      <ref name="vedaweb_att.datcat.attributes"/>
+      <ref name="vedaweb_att.lexicographic.attribute.expand"/>
+      <ref name="vedaweb_att.lexicographic.attribute.norm"/>
+      <ref name="vedaweb_att.lexicographic.attribute.split"/>
+      <ref name="vedaweb_att.lexicographic.attribute.value"/>
+      <ref name="vedaweb_att.lexicographic.attribute.orig"/>
+      <ref name="vedaweb_att.lexicographic.attribute.location"/>
+      <ref name="vedaweb_att.lexicographic.attribute.mergedIn"/>
+      <ref name="vedaweb_att.lexicographic.attribute.opt"/>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.expand">
+      <optional>
+         <attribute name="expand">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives an expanded form of information presented more concisely in the dictionary</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.norm">
+      <optional>
+         <attribute name="norm">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(normalized) gives a normalized form of information given by the source text in a non-normalized form</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.split">
+      <optional>
+         <attribute name="split">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the list of split values for a merged form</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.value">
+      <optional>
+         <attribute name="value">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a value which lacks any realization in the printed source text.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.orig">
+      <optional>
+         <attribute name="orig">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(original) gives the original string or is the empty string when the element does not appear in the source text.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.location">
+      <optional>
+         <attribute name="location">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates an anchor element typically elsewhere in the document, but possibly in another document, which is the original location of this component.</a:documentation>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.mergedIn">
+      <optional>
+         <attribute name="mergedIn">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives a reference to another element, where the original appears as a merged form.</a:documentation>
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_att.lexicographic.attribute.opt">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="opt"
+                    a:defaultValue="false">
+            <a:documentation>(optional) indicates whether the element is optional or not</a:documentation>
+            <data type="boolean"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="vedaweb_model.ptrLike.form">
+      <notAllowed/>
+   </define>
+   <define name="vedaweb_lang">
+      <element name="lang">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language name) contains the name of a language mentioned in etymological or other linguistic discussion. [9.3.4. Etymological Information]</a:documentation>
+         <ref name="vedaweb_macro.paraContent"/>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.lexicographic.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <start>
-      <ref name="vedaweb_TEI"/>
+      <choice>
+         <ref name="vedaweb_TEI"/>
+         <ref name="vedaweb_teiCorpus"/>
+      </choice>
    </start>
 </grammar>
