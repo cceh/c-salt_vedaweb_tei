@@ -1,5 +1,6 @@
+<?xml-model href="vedaweb.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <teiCorpus xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader id="vedaweb_header">
+    <teiHeader xml:id="vedaweb_header">
         <fileDesc>
             <titleStmt>
                 <title type="desc">VedaWeb - Rigveda</title>
@@ -65,7 +66,6 @@
 
                 </respStmt>
             </editionStmt>
-            <extent/>
             <publicationStmt>
                 <publisher>
                     <orgName xml:id="cceh">Cologne Center for eHumanities</orgName>
@@ -79,7 +79,6 @@
             </publicationStmt>
             <sourceDesc>
                 <listBibl>
-
                     <biblFull xml:id="addressees">
                         <fileDesc>
                             <titleStmt>
