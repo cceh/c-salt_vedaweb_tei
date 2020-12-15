@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <?xml-model href="vedaweb.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <teiCorpus xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader xml:id="vedaweb_header">
@@ -12,9 +13,7 @@
                     <orgName>Cologne Center for eHumanities <abbr>CCeH</abbr></orgName>
                     <orgName>University of Cologne</orgName>
                 </respStmt>
-                <funder
-                    ref="https://gepris.dfg.de/gepris/projekt/329358806?context=projekt%26task=showDetail%26id=329358806%26"
-                    >German Research Foundation</funder>
+                <funder ref="https://gepris.dfg.de/gepris/projekt/329358806?context=projekt%26task=showDetail%26id=329358806%26">German Research Foundation</funder>
                 <respStmt>
                     <persName>Francisco Mondaca<affiliation>
                             <orgName>
@@ -102,11 +101,10 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0
                                         International License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/info/addressees.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull xml:id="addressees_src">
                                     <titleStmt>
@@ -163,11 +161,10 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0
                                         International License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/info/strata.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull xml:id="strata_src">
                                     <titleStmt>
@@ -205,7 +202,7 @@
                                             <orgName>
                                                 <orgName>Institut für Vergleichende
                                                   Sprachwissenschaft</orgName>
-                                                <orgName>Universität Zürich</orgName>
+                                                <orgName>Universität Zürich</orgName>   
                                             </orgName>
                                         </affiliation>
                                     </persName>
@@ -217,11 +214,12 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0
                                         International License.</licence>
                                 </availability>
-                            </publicationStmt>
+                                <ptr target="http://digitalcommons.unl.edu/zeabook/55"/>
+                                <idno type="git_commit"/>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/info/stanza_properties.json"/></publicationStmt>
                             <sourceDesc xml:id="stanza_properties_src">
 
                                 <bibl>
@@ -381,11 +379,10 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence target="https://creativecommons.org/licenses/by/4.0/"
-                                        >Distributed under a Creative Commons Attribution 4.0
+                                    <licence target="https://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0
                                         International License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/versions/zurich.xlsx"/></publicationStmt>
                             <sourceDesc>
                                 <p>
                                     <persName>Prof. Dr. Paul Widmer</persName> and <persName>Dr.
@@ -412,7 +409,7 @@
                             <abstract>
                                 <p>These are the modifications made by <persName>Jakob
                                         Halfmann</persName> and <persName>Natalie
-                                        Korobzow</persName>>to the data:</p>
+                                        Korobzow</persName>&gt;to the data:</p>
 
                                 <list>
                                     <item n="1">Disambiguation of the relevant categories, if
@@ -479,13 +476,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/versions/aufrecht.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull xml:id="sa_Rgveda-edAufrecht">
                                     <titleStmt>
@@ -527,16 +522,12 @@
                                                 The file will be immediately removed pending
                                                 resolution of the claim.</p>
 
-                                            <licence
-                                                target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                                >Distributed under a Creative Commons
+                                            <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                                 Attribution-NonCommercial-ShareAlike 4.0
                                                 International License.</licence>
                                         </availability>
                                         <date when-iso="2019-10-03"/>
-                                        <ptr
-                                            target="http://gretil.sub.uni-goettingen.de/gretil/corpustei/sa_Rgveda-edAufrecht.xml"
-                                        />
+                                        <ptr target="http://gretil.sub.uni-goettingen.de/gretil/corpustei/sa_Rgveda-edAufrecht.xml"/>
                                     </publicationStmt>
                                 </biblFull>
                             </sourceDesc>
@@ -578,13 +569,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/versions/lubotsky.json"/></publicationStmt>
                             <sourceDesc>
                                 <bibl xml:id="lubotsky_src">
                                     <title>A Rgvedic word concordance</title>
@@ -600,8 +589,7 @@
                                     </respStmt>
                                     <availability>
                                         <p>Source file shared with <name>Dieter Gunkel</name> and
-                                                <name>Kevin Ryan</name> on <date
-                                                when-iso="2010-03-29"/></p>
+                                                <name>Kevin Ryan</name> on <date when-iso="2010-03-29"/></p>
                                     </availability>
                                 </bibl>
                             </sourceDesc>
@@ -642,13 +630,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/versions/padapatha.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull xml:id="sa_RgvedasaMhitApadapATha">
                                     <titleStmt>
@@ -684,16 +670,12 @@
                                                   <email>gretil(at)sub(dot)uni-goettingen(dot)de</email>.
                                                 The file will be immediately removed pending
                                                 resolution of the claim.</p>
-                                            <licence
-                                                target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                                >Distributed under a Creative Commons
+                                            <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                                 Attribution-NonCommercial-ShareAlike 4.0
                                                 International License.</licence>
                                         </availability>
                                         <date when-iso="2020-07-31"/>
-                                        <ptr
-                                            target="http://gretil.sub.uni-goettingen.de/gretil/corpustei/sa_RgvedasaMhitApadapATha.xml"
-                                        />
+                                        <ptr target="http://gretil.sub.uni-goettingen.de/gretil/corpustei/sa_RgvedasaMhitApadapATha.xml"/>
                                     </publicationStmt>
                                 </biblFull>
                             </sourceDesc>
@@ -734,13 +716,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/versions/vnh.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull xml:id="vnh_texas">
                                     <titleStmt>
@@ -794,11 +774,61 @@
                                                 be generally used, as, for example, by Alexander
                                                 Lubotsky in his 1997 concordance. </p>
                                         </availability>
-                                        <ptr
-                                            target="https://liberalarts.utexas.edu/lrc/rigveda/index.php"
-                                        />
+                                        <ptr target="https://liberalarts.utexas.edu/lrc/rigveda/index.php"/>
                                     </publicationStmt>
                                 </biblFull>
+                            </sourceDesc>
+                        </fileDesc>
+                        <profileDesc>
+                            <langUsage>
+                                <language ident="san">Sanskrit</language>
+                            </langUsage>
+                        </profileDesc>
+                    </biblFull>
+
+                    <biblFull xml:id="eichler">
+                        <fileDesc>
+                            <titleStmt>
+                                <title>Ṛgveda-Saṁhitā</title>
+                                <respStmt>
+                                    <resp>Editor</resp>
+                                    <persName>Prof. Dr. Daniel Kölligan<affiliation>
+                                            <orgName>
+                                                <orgName>Institut für Altertumswissenschaften -
+                                                  Vergleichende Sprachwissenschaft</orgName>
+                                                <orgName>Julius-Maximilians-Universität
+                                                  Würzburg</orgName>
+                                            </orgName>
+                                        </affiliation>
+                                    </persName>
+                                </respStmt>
+                            </titleStmt>
+                            <publicationStmt>
+                                <publisher>Cologne Center for e-Humanities
+                                    <abbr>CCeH</abbr></publisher>
+                                <pubPlace>Cologne, Germany</pubPlace>
+                                <date>2020</date>
+
+                                <availability>
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
+                                        Attribution-NonCommercial-ShareAlike 4.0 International
+                                        License.</licence>
+                                </availability>
+
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/versions/eichler.json"/></publicationStmt>
+
+                            <sourceDesc>
+                                <bibl>
+                                    <title level="a">Ṛgveda-Saṁhitā</title>
+                                    <editor><persName>Detlef Eichler</persName></editor>
+                                    <ptr target="http://www.detlef108.de/RV-D-UTF8.html"/>
+                                    <date type="downloaded" when="2020-11-22"/>
+                                    <availability>
+                                        <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
+                                            Attribution-NonCommercial-ShareAlike 4.0 International
+                                            License.</licence>
+                                    </availability>
+                                </bibl>
                             </sourceDesc>
                         </fileDesc>
                         <profileDesc>
@@ -850,14 +880,12 @@
                                 <date>2020</date>
 
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
 
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/deu/geldner.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -927,14 +955,12 @@
                                 <date>2020</date>
 
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
 
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/deu/grassmann.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -1001,14 +1027,12 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
 
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/deu/otto.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -1060,13 +1084,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/eng/griffith.json"/></publicationStmt>
                             <sourceDesc>
                                 <bibl>
                                     <title>The Hymns of the Rigveda</title>
@@ -1092,9 +1114,7 @@
                                         </biblStruct>
                                     </relatedItem>
                                     <availability>
-                                        <licence
-                                            target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                            >Distributed under a Creative Commons
+                                        <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                             Attribution-NonCommercial-ShareAlike 4.0 International
                                             License.</licence>
                                     </availability>
@@ -1150,13 +1170,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/eng/macdonell.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -1222,13 +1240,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/eng/mueller.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -1298,13 +1314,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/eng/oldenberg.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -1374,13 +1388,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/fra/renou.json"/></publicationStmt>
                             <sourceDesc>
                                 <biblFull>
                                     <titleStmt>
@@ -1429,13 +1441,11 @@
                                 <pubPlace>Cologne, Germany</pubPlace>
                                 <date>2020</date>
                                 <availability>
-                                    <licence
-                                        target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                        >Distributed under a Creative Commons
+                                    <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                         Attribution-NonCommercial-ShareAlike 4.0 International
                                         License.</licence>
                                 </availability>
-                            </publicationStmt>
+                            <ptr target="http://github.com/cceh/c-salt_vedaweb_sources/blob/master/rigveda/translations/rus/elizarenkova.json"/></publicationStmt>
                             <sourceDesc>
                                 <bibl>
                                     <title>Rigveda : Ṛgvēdasaṃhitā</title>
@@ -1459,9 +1469,7 @@
                                         </biblStruct>
                                     </relatedItem>
                                     <availability>
-                                        <licence
-                                            target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                                            >Distributed under a Creative Commons
+                                        <licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/">Distributed under a Creative Commons
                                             Attribution-NonCommercial-ShareAlike 4.0 International
                                             License.</licence>
                                     </availability>
