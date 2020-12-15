@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-12-14T14:06:43Z. .
+Schema generated from ODD source 2020-12-15T10:29:55Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1602,6 +1602,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="vedaweb_model.ptrLike"/>
          <ref name="vedaweb_date"/>
          <ref name="vedaweb_pubPlace"/>
+         <ref name="vedaweb_idno"/>
          <ref name="vedaweb_availability"/>
       </choice>
    </define>
@@ -1747,6 +1748,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="vedaweb_model.nameLike.agent"/>
          <ref name="vedaweb_model.offsetLike"/>
          <ref name="vedaweb_model.placeStateLike"/>
+         <ref name="vedaweb_idno"/>
          <ref name="vedaweb_model.persNamePart"/>
          <ref name="vedaweb_lang"/>
       </choice>
@@ -1756,6 +1758,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="vedaweb_model.nameLike.agent_alternation"/>
          <ref name="vedaweb_model.offsetLike_alternation"/>
          <ref name="vedaweb_model.placeStateLike_alternation"/>
+         <ref name="vedaweb_idno"/>
          <ref name="vedaweb_model.persNamePart_alternation"/>
          <ref name="vedaweb_lang"/>
       </choice>
@@ -1764,6 +1767,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="vedaweb_model.nameLike.agent_sequence"/>
       <ref name="vedaweb_model.offsetLike_sequence"/>
       <ref name="vedaweb_model.placeStateLike_sequence"/>
+      <ref name="vedaweb_idno"/>
       <ref name="vedaweb_model.persNamePart_sequence"/>
       <ref name="vedaweb_lang"/>
    </define>
@@ -1776,6 +1780,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </optional>
       <optional>
          <ref name="vedaweb_model.placeStateLike_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="vedaweb_idno"/>
       </optional>
       <optional>
          <ref name="vedaweb_model.persNamePart_sequenceOptional"/>
@@ -1795,6 +1802,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="vedaweb_model.placeStateLike_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="vedaweb_idno"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="vedaweb_model.persNamePart_sequenceOptionalRepeatable"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -1810,6 +1820,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </oneOrMore>
       <oneOrMore>
          <ref name="vedaweb_model.placeStateLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="vedaweb_idno"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="vedaweb_model.persNamePart_sequenceRepeatable"/>
@@ -2226,7 +2239,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                      <zeroOrMore>
                         <choice>
                            <ref name="vedaweb_model.ptrLike"/>
-                
+                           <ref name="vedaweb_idno"/>
                 
                            <ref name="vedaweb_editor"/>
                            <ref name="vedaweb_respStmt"/>
@@ -2240,7 +2253,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                         <choice>
                            <ref name="vedaweb_title"/>
                            <ref name="vedaweb_model.ptrLike"/>
-                
+                           <ref name="vedaweb_idno"/>
                         </choice>
                      </oneOrMore>
             
@@ -2256,7 +2269,11 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                      </zeroOrMore>
             
                   </group>
-                  <empty/>
+          
+            
+            
+                  <ref name="vedaweb_idno"/>
+          
                </choice>
             </optional>
       
@@ -2276,7 +2293,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
         
                   <zeroOrMore>
                      <choice>
-            
+                        <ref name="vedaweb_idno"/>
                         <ref name="vedaweb_model.ptrLike"/>
                         <ref name="vedaweb_editor"/>
             
@@ -3254,6 +3271,47 @@ Feature Value]</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="vedaweb_idno">
+      <element name="idno">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="vedaweb_model.gLike"/>
+               <ref name="vedaweb_idno"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="vedaweb_att.global.attributes"/>
+         <ref name="vedaweb_att.datable.attributes"/>
+         <ref name="vedaweb_att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the identifier, for example as an ISBN, Social Security number, etc.
+Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7] OCLC</a:documentation>
+               <choice>
+                  <value>ISBN</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the International ISBN Agency.</a:documentation>
+                  <value>ISSN</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Serial Number: an eight-digit number to uniquely identify a serial publication.</a:documentation>
+                  <value>DOI</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Digital Object Identifier: a unique string of letters and numbers assigned to an electronic document.</a:documentation>
+                  <value>URI</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Uniform Resource Identifier: a string of characters to uniquely identify a resource which usually contains indication of the means of accessing that resource, the name of its host, and its filepath.</a:documentation>
+                  <value>VIAF</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A data number in the Virtual Internet Authority File assigned to link different names in catalogs around the world for the same entity.</a:documentation>
+                  <value>ESTC</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">English Short-Title Catalogue number: an identifying number assigned to a document in English printed in the British Isles or North America before 1801.</a:documentation>
+                  <value>OCLC</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative.</a:documentation>
+                  <data type="token">
+                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+                  </data>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="vedaweb_availability">
       <element name="availability">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
@@ -3317,7 +3375,7 @@ Feature Value]</a:documentation>
         
                <zeroOrMore>
                   <choice>
-            
+                     <ref name="vedaweb_idno"/>
                      <ref name="vedaweb_biblScope"/>
                   </choice>
                </zeroOrMore>

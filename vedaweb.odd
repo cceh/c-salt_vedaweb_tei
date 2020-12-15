@@ -27,7 +27,7 @@
             include="p list item head author title l lg ptr respStmt resp publisher date teiCorpus abbr pubPlace listBibl bibl biblScope name editor email relatedItem biblStruct monogr imprint"/>
           <moduleRef key="tei"/>
           <moduleRef key="header"
-            include="teiHeader fileDesc titleStmt publicationStmt sourceDesc funder availability editionStmt edition biblFull licence profileDesc langUsage language seriesStmt abstract"/>
+            include="teiHeader fileDesc titleStmt publicationStmt sourceDesc funder availability editionStmt edition biblFull licence profileDesc langUsage language seriesStmt abstract idno"/>
           <moduleRef key="textstructure" include="TEI text body div front back"/>
           <moduleRef key="namesdates" include="persName person orgName affiliation"/>
           <moduleRef key="dictionaries" include="lang"/>
