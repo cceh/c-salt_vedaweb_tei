@@ -8,3 +8,8 @@ The information contained in these TEI files can also be accessed:
 
 # Licence
 Every source on this reposítory contains a specific licence. Please see the <teiHeader> in [vedawebcorpus.tei](https://github.com/cceh/c-salt_vedaweb_tei/blob/master/vedaweb_corpus.tei) for licence details.
+
+# Cite
+
+[![DOI](https://zenodo.org/badge/195203670.svg)](https://zenodo.org/badge/latestdoi/195203670)
+
