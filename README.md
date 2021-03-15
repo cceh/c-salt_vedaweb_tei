@@ -7,7 +7,7 @@ The information contained in these TEI files can also be accessed:
 - Though a React web app: https://vedaweb.uni-koeln.de/rigveda/
 
 # Licence
-Every source on this reposítory contains a specific CC licence. Please see <teiHeader> [vedawebcorpus.tei](https://github.com/cceh/c-salt_vedaweb_tei/blob/master/vedaweb_corpus.tei) for licence details.
+Every source on this reposítory contains a specific CC licence. For details see the `<teiHeader>` in [vedawebcorpus.tei](https://github.com/cceh/c-salt_vedaweb_tei/blob/master/vedaweb_corpus.tei).
 
 # Cite
 
